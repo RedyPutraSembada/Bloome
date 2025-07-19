@@ -68,13 +68,13 @@ const Register = () => {
                   />
                   Daftar via WhatsApp
                 </motion.button>
-                <motion.button 
+                {/* <motion.button 
                   className='group border border-white bg-transparent hover:bg-white text-white hover:text-primary px-8 py-4 rounded-full text-lg font-medium transition-all duration-300'
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Login
-                </motion.button>
+                </motion.button> */}
               </motion.div>
               <motion.div 
                 className='mt-6 text-center'
