@@ -144,7 +144,7 @@ const Header: React.FC = () => {
                 />
               ))}
             </nav>
-            {/* <div className='p-4 bg-white border-t border-gray-200'>
+            <div className='p-4 bg-white border-t border-gray-200'>
               <div className='flex flex-col space-y-4 w-full bg-white'>
                 <Link
                   href='#'
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
                   Sign Up
                 </Link>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

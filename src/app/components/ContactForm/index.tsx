@@ -145,7 +145,7 @@ const ContactForm = () => {
                 </div>
                 <motion.button
                   onClick={handleWhatsAppContact}
-                  className='w-full bg-green-500 text-white py-3 px-4 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2'
+                  className='w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-secondary transition-colors flex items-center justify-center gap-2'
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

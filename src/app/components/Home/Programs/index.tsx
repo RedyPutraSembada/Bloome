@@ -99,6 +99,20 @@ const Programs = () => {
     }).format(price)
   }
 
+  const handleWhatsAppRegister = (programTitle: string, programName: string, price: number) => {
+    const formattedPrice = formatPrice(price)
+    const message = encodeURIComponent(
+      `Halo Bloome! Saya tertarik dengan program ${programTitle} - ${programName}.\n\n` +
+      `Detail program:\n` +
+      `- Program: ${programTitle}\n` +
+      `- Nama: ${programName}\n` +
+      `- Harga: ${formattedPrice}\n\n` +
+      `Mohon informasi lebih lanjut tentang program ini. Terima kasih!`
+    )
+    const whatsappUrl = `https://wa.me/628515613938?text=${message}`
+    window.open(whatsappUrl, '_blank')
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -219,6 +233,19 @@ const Programs = () => {
                               {items.students} siswa
                             </p>
                           </div>
+                        </div>
+                        
+                        {/* Tombol Daftar */}
+                        <div className='mt-6'>
+                          <motion.button
+                            onClick={() => handleWhatsAppRegister(items.heading, items.name, items.price)}
+                            className='w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-secondary transition-colors flex items-center justify-center gap-2 font-medium'
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <Icon icon='mdi:whatsapp' className='text-xl' />
+                            Daftar Program Ini
+                          </motion.button>
                         </div>
                       </div>
                     </div>

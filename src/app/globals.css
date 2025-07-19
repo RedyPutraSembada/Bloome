@@ -7,12 +7,12 @@
   --shadow-testimonial-shadow2: 5.54348px 38.8043px 110.87px
     rgba(89, 104, 118, 0.15);
 
-  --color-primary: #6556ff;
-  --color-secondary: #1a21bc;
+  --color-primary: #166534;
+  --color-secondary: #14532d;
   --color-grey: #57595f;
   --color-slate-gray: #f6faff;
   --color-deep-slate: #d5effa;
-  --color-success: #43c639;
+  --color-success: #16a34a;
   --color-midnight_text: #222c44;
 
   --spacing-75\%: 75%;
@@ -61,12 +61,12 @@ html {
 }
 
 .slick-dots {
-  color: #1a21bc;
+  color: #166534;
 }
 
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: #1a21bc !important;
+  color: #166534 !important;
 }
 
 .slick-dots li button:before {
