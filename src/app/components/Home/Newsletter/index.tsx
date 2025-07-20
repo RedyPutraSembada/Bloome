@@ -5,7 +5,7 @@ const Newsletter = () => {
     <section>
       <div className='container'>
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12 xl:gap-x-8'>
-          <div className='col-span-12 bg-newsletter-bg bg-cover rounded-2xl bg-no-repeat px-4'>
+          <div className='col-span-12 bg-newsletter-bg bg-cover rounded-2xl bg-no-repeat'>
             <div className='mb-10 mt-24 lg:mx-64 lg:my-24'>
               <h2 className='text-center font-semibold text-white mb-3'>
                 Newsletter.

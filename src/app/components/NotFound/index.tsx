@@ -5,9 +5,9 @@ import Link from "next/link";
 const NotFound = () => {
   return (
     <section className="bg-white pt-8 pb-20">
-      <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap items-center">
-          <div className="w-full px-4 md:w-5/12 lg:w-6/12">
+      <div className="container">
+                  <div className="flex flex-wrap items-center">
+            <div className="w-full md:w-5/12 lg:w-6/12">
             <div className="relative mx-auto aspect-129/138 max-w-[357px] text-center">
               <Image
                 src="/images/404.svg"
@@ -20,7 +20,7 @@ const NotFound = () => {
               />
             </div>
           </div>
-          <div className="w-full px-4 md:w-7/12 lg:w-6/12 xl:w-5/12">
+                      <div className="w-full md:w-7/12 lg:w-6/12 xl:w-5/12">
             <div>
               <div className="mb-8">
                 <svg

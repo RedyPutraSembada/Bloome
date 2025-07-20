@@ -80,9 +80,9 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 z-40 w-full transition-all duration-300 ${
-        sticky ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm shadow-sm py-4'
+        sticky ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm shadow-sm py-4 lg:py-4'
       }`}>
-      <div>
+      <div className='w-full overflow-hidden'>
         <div className='container flex items-center justify-between'>
           <Logo />
           <nav className='hidden lg:flex grow items-center lg:gap-5 xl:gap-8 justify-center'>
@@ -113,9 +113,9 @@ const Header: React.FC = () => {
         )}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 right-0 h-screen w-full bg-white shadow-lg transform transition-transform duration-300 max-w-xs ${
+          className={`lg:hidden fixed top-0 right-0 h-screen w-full max-w-xs bg-white shadow-lg transform transition-transform duration-300 ${
             navbarOpen ? 'translate-x-0' : 'translate-x-full'
-          } z-50`}
+          } z-50 overflow-hidden`}
           style={{ backgroundColor: 'white', height: '100vh' }}>
           <div className='flex items-center justify-between gap-2 p-4 bg-white border-b border-gray-200'>
             <div>
@@ -134,7 +134,7 @@ const Header: React.FC = () => {
               />
             </button>
           </div>
-          <div className='flex flex-col h-full bg-white'>
+          <div className='flex flex-col h-full bg-white overflow-y-auto'>
             <nav className='flex flex-col items-start p-4 bg-white flex-1'>
               {navLink.map((item, index) => (
                 <MobileHeaderLink 

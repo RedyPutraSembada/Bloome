@@ -31,8 +31,8 @@ const Hero = () => {
   };
 
   return (
-    <section id='home-section' className='bg-slate-gray'>
-      <div className='container pt-16'>
+    <section id='home-section' className='bg-slate-gray w-full overflow-hidden'>
+      <div className='container pt-20 lg:pt-16'>
         <motion.div 
           className='grid grid-cols-1 lg:grid-cols-12 lg:gap-1 gap-10 items-center'
           variants={containerVariants}
@@ -51,13 +51,13 @@ const Hero = () => {
               </p>
             </motion.div>
             <motion.h1 
-              className='text-midnight_text lg:text-start text-center font-semibold leading-tight capitalize'
+              className='text-midnight_text lg:text-start text-center font-semibold leading-tight capitalize text-4xl sm:text-5xl lg:text-65'
               variants={itemVariants}
             >
               Bersama Bloome, Wujudkan Kampus Impianmu
             </motion.h1>
             <motion.p 
-              className='text-black/70 text-lg lg:text-start text-center max-w-xl capitalize'
+              className='text-black/70 text-base sm:text-lg lg:text-start text-center max-w-xl capitalize'
               variants={itemVariants}
             >
               Bloome menyediakan berbagai program exclusive: UTBK, SIMAK UI, SIMAK KKI UI, IUP UGM, IUP ITB, Ujian Mandiri PTN, Smartcamp FK, Smartcamp Hukum.
@@ -113,6 +113,7 @@ const Hero = () => {
               alt='Model dengan almamater'
               width={1000}
               height={805}
+              className='w-full h-auto max-w-full'
             />
           </motion.div>
         </motion.div>
