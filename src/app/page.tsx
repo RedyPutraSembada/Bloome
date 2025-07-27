@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "@/app/components/Home/Hero";
+import WhyBloome from "@/app/components/Home/WhyBloome";
 import Programs from "@/app/components/Home/Programs";
 import Testimonial from "@/app/components/Home/Testimonials";
 import ContactForm from "@/app/components/ContactForm";
@@ -19,15 +20,18 @@ export default function Home() {
         <Hero />
       </AnimatedSection>
       <AnimatedSection delay={0.2}>
-        <Programs />
+        <WhyBloome />
       </AnimatedSection>
       <AnimatedSection delay={0.4}>
-        <Testimonial />
+        <Programs />
       </AnimatedSection>
       <AnimatedSection delay={0.6}>
-        <ContactForm/>
+        <Testimonial />
       </AnimatedSection>
       <AnimatedSection delay={0.8}>
+        <ContactForm/>
+      </AnimatedSection>
+      <AnimatedSection delay={1.0}>
         <Register />
       </AnimatedSection>
     </main>

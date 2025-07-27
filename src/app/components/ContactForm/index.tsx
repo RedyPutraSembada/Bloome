@@ -96,8 +96,22 @@ const ContactForm = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  const universityLogos = [
+    '/images/universitas/UI.png',
+    '/images/universitas/ITB.png',
+    '/images/universitas/ITS.png',
+    '/images/universitas/IPB.png',
+    '/images/universitas/UB.png',
+    '/images/universitas/UP.png',
+    '/images/universitas/UJ.png',
+    '/images/universitas/UAU.png',
+    '/images/universitas/UDS.png',
+    '/images/universitas/SMU.png',
+    '/images/universitas/MU.png',
+  ];
+
   return (
-    <section id='kontak' className='scroll-mt-12'>
+    <section id='kontak' className='scroll-mt-12 bg-gradient-to-br from-slate-50 to-green-50'>
       <div className='container'>
         <motion.div 
           className='relative'
@@ -106,179 +120,123 @@ const ContactForm = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.h2 
-            className='mb-9 text-midnight_text'
-            variants={itemVariants}
-          >
-            Contact Us
-          </motion.h2>
-          
-          {/* Contact Info */}
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-8'>
+          {/* Main Content - Two Column Layout */}
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16'>
+            {/* Left Column - Question */}
             <motion.div 
-              className='bg-white p-6 rounded-2xl shadow-md border border-black/10'
+              className='flex flex-col justify-center w-1/2'
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
             >
-              <h3 className='text-xl font-semibold mb-4 text-midnight_text'>Informasi Kontak</h3>
-              <div className='space-y-4'>
-                <div className='flex items-center gap-3'>
-                  <Icon
-                    icon='mdi:whatsapp'
-                    className='text-primary text-2xl'
-                  />
-                  <div>
-                    <p className='font-medium'>Nomor WA Admin</p>
-                    <p className='text-black/60'>+62 811-8800-9569</p>
+              <h2 className='text-2xl lg:text-2xl xl:text-3xl font-normal text-midnight_text leading-tight mb-6'>
+              Bloome Education – Expert Guidance for Top University & IUP Admissions
+              </h2>
+            </motion.div>
+
+            {/* Right Column - Description and CTA */}
+            <motion.div 
+              className='flex flex-col justify-center'
+              variants={itemVariants}
+            >
+              <div className='space-y-6'>
+                <div>
+                  {/* <h3 className='text-2xl font-bold text-midnight_text mb-4'>
+                    Bloome Education – Expert Guidance for Top University & IUP Admissions
+                  </h3> */}
+                  <p className='text-lg text-gray-700 leading-relaxed'>
+                    Kick off your journey toward the future today and turn your dream school into reality with our 
+                    comprehensive academic preparation and mentoring programs.
+                  </p>
+                </div>
+
+                <div className='bg-white p-6 rounded-2xl shadow-lg border border-green-100'>
+                  <h4 className='text-xl font-semibold text-midnight_text mb-4'>
+                    Exclusive Bloome Preparation Features
+                  </h4>
+                  <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Expert Consulting for Undergraduate Programs</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Placement Test & Learning Assessment Report</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Study Modules, Practice Questions & Regular Tryouts</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>MMPI & SJT Preparation for Medical School Applicants</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>TOEFL/IELTS Test Preparation</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Motivation Letter Writing Support</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Mock Interview & FGD Simulations</span>
+                    </div>
+                    <div className='flex items-start gap-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Global University Mentorship</span>
+                    </div>
+                    <div className='flex items-start gap-2 md:col-span-2'>
+                      <Icon icon='mdi:check-circle' className='text-primary text-xl mt-0.5 flex-shrink-0' />
+                      <span className='text-gray-700'>Major Selection Consultation with Professional Psychologists</span>
+                    </div>
                   </div>
                 </div>
-                <div className='flex items-center gap-3'>
-                  <Icon
-                    icon='solar:point-on-map-perspective-bold'
-                    className='text-primary text-2xl'
-                  />
-                  <div>
-                    <p className='font-medium'>Lokasi Bimbel Bloome</p>
-                    <p className='text-black/60'>Jakarta, Indonesia</p>
-                  </div>
-                </div>
+
                 <motion.button
                   onClick={handleWhatsAppContact}
-                  className='w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-secondary transition-colors flex items-center justify-center gap-2'
+                  className='inline-flex items-center gap-2 text-primary font-semibold text-lg hover:text-secondary transition-colors group'
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Icon icon='mdi:whatsapp' className='text-xl' />
-                  Chat WhatsApp
+                  <span className='underline'>Get In Touch Now</span>
+                  <Icon 
+                    icon='mdi:arrow-right' 
+                    className='text-xl group-hover:translate-x-1 transition-transform' 
+                  />
                 </motion.button>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className='bg-white p-6 rounded-2xl shadow-md border border-black/10'
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <h3 className='text-xl font-semibold mb-4 text-midnight_text'>Jam Operasional</h3>
-              <div className='space-y-2'>
-                <div className='flex justify-between'>
-                  <span>Senin - Jumat</span>
-                  <span className='font-medium'>08:00 - 21:00</span>
-                </div>
-                <div className='flex justify-between'>
-                  <span>Sabtu</span>
-                  <span className='font-medium'>08:00 - 18:00</span>
-                </div>
-                <div className='flex justify-between'>
-                  <span>Minggu</span>
-                  <span className='font-medium'>09:00 - 16:00</span>
-                </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Contact Form */}
-          {/* <div className='relative border px-6 py-2 rounded-2xl'>
-            <form
-              onSubmit={handleSubmit}
-              className='flex flex-wrap w-full m-auto justify-between'>
-              <div className='sm:flex gap-6 w-full'>
-                <div className='mx-0 my-2.5 flex-1'>
-                  <label
-                    htmlFor='fname'
-                    className='pb-3 inline-block text-base'>
-                    Nama Depan
-                  </label>
-                  <input
-                    id='fname'
-                    type='text'
-                    name='firstname'
-                    value={formData.firstname}
-                    onChange={handleChange}
-                    placeholder='Ahmad'
-                    className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
+          {/* Scrolling University Logos */}
+          <motion.div 
+            className='relative overflow-hidden'
+            variants={itemVariants}
+          >
+            <div className='flex space-x-8 animate-scroll'>
+              {/* First set of logos */}
+              {universityLogos.map((logo, index) => (
+                <div key={index} className='flex-shrink-0'>
+                  <img 
+                    src={logo} 
+                    alt={`University ${index + 1}`}
+                    className='h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity'
                   />
                 </div>
-                <div className='mx-0 my-2.5 flex-1'>
-                  <label
-                    htmlFor='lname'
-                    className='pb-3 inline-block text-base'>
-                    Nama Belakang
-                  </label>
-                  <input
-                    id='lname'
-                    type='text'
-                    name='lastname'
-                    value={formData.lastname}
-                    onChange={handleChange}
-                    placeholder='Rizki'
-                    className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
+              ))}
+              {/* Duplicate set for seamless scrolling */}
+              {universityLogos.map((logo, index) => (
+                <div key={`duplicate-${index}`} className='flex-shrink-0'>
+                  <img 
+                    src={logo} 
+                    alt={`University ${index + 1}`}
+                    className='h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity'
                   />
                 </div>
-              </div>
-              <div className='sm:flex gap-6 w-full'>
-                <div className='mx-0 my-2.5 flex-1'>
-                  <label
-                    htmlFor='email'
-                    className='pb-3 inline-block text-base'>
-                    Email
-                  </label>
-                  <input
-                    id='email'
-                    type='email'
-                    name='email'
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder='ahmad.rizki@email.com'
-                    className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  />
-                </div>
-                <div className='mx-0 my-2.5 flex-1'>
-                  <label
-                    htmlFor='Phnumber'
-                    className='pb-3 inline-block text-base'>
-                    Nomor Telepon
-                  </label>
-                  <input
-                    id='Phnumber'
-                    type='tel'
-                    name='phnumber'
-                    placeholder='+6281234567890'
-                    value={formData.phnumber}
-                    onChange={handleChange}
-                    className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  />
-                </div>
-              </div>
-              <div className='w-full mx-0 my-2.5 flex-1'>
-                <label htmlFor='message' className='text-base inline-block'>
-                  Pesan
-                </label>
-                <textarea
-                  id='message'
-                  name='Message'
-                  value={formData.Message}
-                  onChange={handleChange}
-                  className='w-full mt-2 rounded-2xl px-5 py-3 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  placeholder='Tulis pesan Anda di sini...'></textarea>
-              </div>
-              <div className='mx-0 my-2.5 w-full'>
-                <button
-                  type='submit'
-                  disabled={!isFormValid || loader}
-                  className={`border leading-none px-6 text-lg font-medium py-4 rounded-full 
-                    ${
-                      !isFormValid || loader
-                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        : 'bg-primary border-primary text-white hover:bg-transparent hover:text-primary cursor-pointer'
-                    }`}>
-                  Kirim Pesan
-                </button>
-              </div>
-            </form>
-          </div> */}
+              ))}
+            </div>
+          </motion.div>
+
           {showThanks && (
             <motion.div 
               className='text-white bg-primary rounded-full px-4 text-lg mb-4.5 mt-1 absolute flex items-center gap-2'
@@ -292,6 +250,25 @@ const ContactForm = () => {
           )}
         </motion.div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   )
 }

@@ -3,8 +3,140 @@
 import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(1); // Start from 1 (first real slide)
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Data untuk slider
+  const slides = [
+    {
+      id: 1,
+      image: '/images/hero/1.jpg',
+      label: 'IMPACT ACROSS INDONESIA',
+      title: 'Become a Student at Indonesia’s Top Universities',
+      description: 'Achieve SNBT 700+ and Get into IUP at UI, UGM, ITB with Group & 1-on-1 Support from Expert Tutors.',
+      attendees: '500+ Attendees'
+    },
+    {
+      id: 2,
+      image: '/images/hero/2.jpg',
+      label: 'SUCCESS STORIES',
+      title: 'Become a Student at Indonesia’s Top Universities',
+      description: 'Achieve SNBT 700+ and Get into IUP at UI, UGM, ITB with Group & 1-on-1 Support from Expert Tutors.',
+      attendees: '1000+ Students'
+    },
+    {
+      id: 3,
+      image: '/images/hero/3.jpg',
+      label: 'EXCELLENCE PROGRAM',
+      title: 'Become a Student at Indonesia’s Top Universities',
+      description: 'Achieve SNBT 700+ and Get into IUP at UI, UGM, ITB with Group & 1-on-1 Support from Expert Tutors.',
+      attendees: '95% Success Rate'
+    }
+  ];
+
+  // Create extended slides array for infinite effect
+  const extendedSlides = [
+    slides[slides.length - 1], // Last slide at the beginning
+    ...slides,
+    slides[0] // First slide at the end
+  ];
+
+  // Auto slide - selalu ke kiri
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Initialize slide position
+  useEffect(() => {
+    // Ensure we start at the correct position
+    if (currentSlide === 1 && slides.length > 0) {
+      // Component is properly initialized
+    }
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
+    setCurrentSlide(prev => prev + 1);
+    
+    // If we're at the duplicate first slide, jump to real first slide
+    if (currentSlide === slides.length) {
+      timeoutRef.current = setTimeout(() => {
+        setCurrentSlide(1);
+        setIsTransitioning(false);
+      }, 800);
+    } else {
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800);
+    }
+  };
+
+  const prevSlide = () => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
+    setCurrentSlide(prev => prev - 1);
+    
+    // If we're at the duplicate last slide, jump to real last slide
+    if (currentSlide === 1) {
+      timeoutRef.current = setTimeout(() => {
+        setCurrentSlide(slides.length);
+        setIsTransitioning(false);
+      }, 800);
+    } else {
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800);
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide(index + 1); // +1 because of duplicate slide at beginning
+    timeoutRef.current = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 800);
+  };
+
+  // Get current slide data for content
+  const getCurrentSlideData = () => {
+    let index;
+    if (currentSlide === 0) {
+      index = slides.length - 1; // Last slide
+    } else if (currentSlide === slides.length + 1) {
+      index = 0; // First slide
+    } else {
+      index = currentSlide - 1; // Normal slides
+    }
+    return slides[index] || slides[0]; // Fallback to first slide
+  };
+
+  // Get current slide index for dots
+  const getCurrentSlideIndex = () => {
+    if (currentSlide === 0) return slides.length - 1;
+    if (currentSlide === slides.length + 1) return 0;
+    return Math.max(0, Math.min(slides.length - 1, currentSlide - 1));
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,197 +162,152 @@ const Hero = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  const currentSlideData = getCurrentSlideData();
+  const currentSlideIndex = getCurrentSlideIndex();
+
+  // Add safety check
+  if (!currentSlideData) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <section id='home-section' className='bg-slate-gray w-full overflow-hidden'>
-      <div className='container pt-20 lg:pt-16'>
+    <section id='home-section' className='relative w-full h-screen overflow-hidden'>
+      {/* Background Slider */}
+      <div className='absolute inset-0 w-full h-full overflow-hidden'>
         <motion.div 
-          className='grid grid-cols-1 lg:grid-cols-12 lg:gap-1 gap-10 items-center'
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          className='flex w-full h-full'
+          animate={{ 
+            x: `${-currentSlide * 100}%`
+          }}
+          transition={{ 
+            duration: isTransitioning ? 0.8 : 0, 
+            ease: "easeInOut"
+          }}
         >
-          <motion.div className='col-span-6 flex flex-col gap-8 items-center lg:items-start' variants={itemVariants}>
-            {/* <motion.div className='flex gap-2 mx-auto lg:mx-0' variants={itemVariants}>
-              <Icon
-                icon='solar:verified-check-bold'
-                className='text-success text-xl inline-block me-2'
+          {extendedSlides.map((slide, index) => (
+            <div
+              key={`${slide.id}-${index}`}
+              className='relative w-full h-full flex-shrink-0'
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className='object-cover'
+                priority={index === 1}
               />
-              <p className='text-success text-sm font-semibold text-center lg:text-start tracking-widest uppercase'>
-                Dapatkan diskon 30% untuk pendaftaran pertama
-              </p>
-            </motion.div> */}
-            <motion.h1 
-              className='text-midnight_text lg:text-start text-center font-semibold leading-tight capitalize text-4xl sm:text-5xl lg:text-65'
-              variants={itemVariants}
-            >
-              Your Gateway to Top Universities
-            </motion.h1>
-            <motion.p 
-              className='text-black/70 text-base sm:text-lg lg:text-start text-center max-w-xl capitalize'
-              variants={itemVariants}
-            >
-              Bloome Education adalah lembaga konsultan jasa pendidikan yang berfokus pada penyediaan
-              bimbingan belajar intensif bagi siswa-siswi SMA kelas 12. Lembaga ini lahir berasal
-              dari kesadaran para alumni yang berasal dari UI, UGM, ITB untuk membentuk
-              lembaga belajar yang unggul dan berkualitas. Kami membantu siswa-siswi SMA
-              kelas 12 mempersiapkan diri menghadapi UTBK (Ujian Tertulis Berbasis Komputer),
-              Ujian Mandiri PTN, hingga Ujian International Undergraduate Program (IUP).
-              Berlokasi di Menara Batavia, Jakarta, Bloome Education hadir dengan visi untuk
-              membuka jalan menuju kampus impian melalui bimbingan berkualitas dan strategi
-              belajar yang efektif.
-            </motion.p>
-            {/* <motion.div 
-              className='flex items-center justify-between pt-10 lg:pt-4 flex-wrap gap-4'
-              variants={itemVariants}
-            >
-              <motion.div className='flex gap-2' variants={featureVariants}>
-                <Image
-                  src='/images/banner/check-circle.svg'
-                  alt='check-image'
-                  width={30}
-                  height={30}
-                  className='smallImage'
-                />
-                <p className='text-sm sm:text-lg font-normal text-black'>
-                  Jadwal Fleksibel
-                </p>
-              </motion.div>
-              <motion.div className='flex gap-2' variants={featureVariants}>
-                <Image
-                  src='/images/banner/check-circle.svg'
-                  alt='check-image'
-                  width={30}
-                  height={30}
-                  className='smallImage'
-                />
-                <p className='text-sm sm:text-lg font-normal text-black'>
-                  Mentor Berpengalaman
-                </p>
-              </motion.div>
-              <motion.div className='flex gap-2' variants={featureVariants}>
-                <Image
-                  src='/images/banner/check-circle.svg'
-                  alt='check-image'
-                  width={30}
-                  height={30}
-                  className='smallImage'
-                />
-                <p className='text-sm sm:text-lg font-normal text-black'>
-                  Garansi Lolos
-                </p>
-              </motion.div>
-            </motion.div> */}
-          </motion.div>
-          <motion.div 
-            className='col-span-6 flex justify-center'
-            variants={imageVariants}
-          >
-            <Image
-              src='/images/banner/mahila.webp'
-              alt='Model dengan almamater'
-              width={1000}
-              height={805}
-              className='w-full h-auto max-w-full'
-            />
-          </motion.div>
-        </motion.div>
-        
-        {/* Kenapa Harus Pilih Bloome Section */}
-        <motion.div 
-          className='mt-20'
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <motion.h2 
-            className='text-midnight_text text-center font-semibold mb-8'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            WHY BLOOME?
-          </motion.h2>
-          <motion.p 
-            className='text-black/70 text-center mb-8 max-w-4xl mx-auto'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            At Bloome Education, we don't just prepare students for exams — we prepare them for life. Through personalized mentoring and our proven 3-Pillar Approach, we help students unlock their true potential, build strong, consistent study habits, and achieve admission into their dream universities.
-          </motion.p>
-          <motion.p 
-            className='text-black/70 text-center mb-12 max-w-4xl mx-auto'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            Bloome isn't just another tutoring center, it's a place where students grow with clarity, confidence, and purpose. Bloome makes you ready. For exams, for university, for life. Not just tutoring. Bloome builds you up.
-          </motion.p>
-          <motion.div 
-            className='grid grid-cols-1 md:grid-cols-3 gap-8'
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <motion.div className='text-center' variants={itemVariants}>
-              <motion.div 
-                className='bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Icon
-                  icon='solar:star-linear'
-                  className='text-primary text-2xl'
-                />
-              </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Unlock True Potential</h3>
-              <p className='text-black/70 text-sm'>
-                We help students discover and maximize their natural abilities through personalized guidance
-              </p>
-            </motion.div>
-            <motion.div className='text-center' variants={itemVariants}>
-              <motion.div 
-                className='bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Icon
-                  icon='solar:notebook-minimalistic-outline'
-                  className='text-primary text-2xl'
-                />
-              </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Build Study Habits</h3>
-              <p className='text-black/70 text-sm'>
-                Develop strong, consistent study habits that last beyond exams and into university life
-              </p>
-            </motion.div>
-            <motion.div className='text-center' variants={itemVariants}>
-              <motion.div 
-                className='bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Icon
-                  icon='solar:target-linear'
-                  className='text-primary text-2xl'
-                />
-              </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Achieve Dream Universities</h3>
-              <p className='text-black/70 text-sm'>
-                Successfully gain admission into your dream universities through our proven approach
-              </p>
-            </motion.div>
-          </motion.div>
+              {/* Overlay untuk memastikan teks tetap terbaca */}
+              <div className='absolute inset-0 bg-black/30'></div>
+            </div>
+          ))}
         </motion.div>
       </div>
-    </section>
-  )
+
+      {/* Content Card */}
+      <div className='relative z-20 h-full flex items-center'>
+        <div className='container'>
+          <div className='relative'>
+            {/* Transparent Card - Full Height */}
+            <motion.div 
+              className='relative bg-primary/80 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl w-full lg:w-1/2 h-screen flex flex-col justify-center'
+              variants={itemVariants}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Navigation Arrows - Inside the card */}
+              <motion.button
+                onClick={prevSlide}
+                disabled={isTransitioning}
+                className='absolute -left-7 top-1/2 -translate-y-1/2 z-30 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition-all duration-300 disabled:opacity-50'
+                whileHover={{ scale: isTransitioning ? 1 : 1.1 }}
+                whileTap={{ scale: isTransitioning ? 1 : 0.9 }}
+              >
+                <Icon icon="solar:arrow-left-linear" className="text-white text-xl" />
+              </motion.button>
+
+              <motion.button
+                onClick={nextSlide}
+                disabled={isTransitioning}
+                className='absolute -right-7 top-1/2 -translate-y-1/2 z-30 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition-all duration-300 disabled:opacity-50'
+                whileHover={{ scale: isTransitioning ? 1 : 1.1 }}
+                whileTap={{ scale: isTransitioning ? 1 : 0.9 }}
+              >
+                <Icon icon="solar:arrow-right-linear" className="text-white text-xl" />
+              </motion.button>
+
+              {/* Label */}
+              {/* <motion.div 
+                className='inline-block bg-gradient-to-r from-gray-800 to-primary rounded-full px-4 py-2 mb-6'
+                variants={itemVariants}
+              >
+                <p className='text-white text-sm font-semibold tracking-widest uppercase'>
+                  {currentSlideData.label}
+                </p>
+              </motion.div> */}
+
+              {/* Title */}
+              <motion.h1 
+                className='text-white text-4xl lg:text-5xl font-bold mb-6 leading-tight'
+                variants={itemVariants}
+                key={`title-${currentSlideIndex}`}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                {currentSlideData.title}
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p 
+                className='text-white/90 text-lg mb-8 leading-relaxed'
+                variants={itemVariants}
+                key={`desc-${currentSlideIndex}`}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                {currentSlideData.description}
+              </motion.p>
+
+              {/* Attendees */}
+              {/* <motion.div 
+                className='text-white/80 text-lg font-medium'
+                variants={itemVariants}
+                key={`attendees-${currentSlideIndex}`}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                {currentSlideData.attendees}
+              </motion.div> */}
+
+              {/* Pagination Dots */}
+              <motion.div 
+                className='flex gap-2 mt-8'
+                variants={itemVariants}
+              >
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    disabled={isTransitioning}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 disabled:opacity-50 ${
+                      index === currentSlideIndex
+                        ? 'bg-white scale-110' 
+                        : 'bg-white/50 hover:bg-white/70'
+                    }`}
+                  />
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      
+   </section>
+ )
 }
 
 export default Hero

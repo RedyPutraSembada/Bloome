@@ -3,6 +3,7 @@ import { FooterLinkType } from '@/app/types/footerlink'
 import { MentorType } from '@/app/types/mentor'
 import { HeaderType } from '@/app/types/menu'
 import { TestimonialType } from '@/app/types/testimonial'
+import { chunkArray } from '@/utils/validateEmail'
 import { NextResponse } from 'next/server'
 
 const HeaderData: HeaderType[] = [
@@ -15,7 +16,7 @@ const HeaderData: HeaderType[] = [
 
 const ProgramData: CourseType[] = [
   {
-    heading: 'LBEE Excellent Program (Full Facilities)',
+    heading: 'LBEE Excellent Program',
     name: 'Bloome Education',
     imgSrc: '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat (Materi & Fasilitas).jpg',
     students: 100,
@@ -30,7 +31,7 @@ const ProgramData: CourseType[] = [
     ]
   },
   {
-    heading: 'Program 2 Tahun SMA (Full Facilities)',
+    heading: 'Program 2 Tahun SMA',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat (Materi dan Fasilitas).jpg',
     students: 120,
@@ -71,7 +72,7 @@ const ProgramData: CourseType[] = [
     ]
   },
   {
-    heading: 'Program Khusus IUP (Group Online & Offline)',
+    heading: 'Program Khusus IUP',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline (Materi dan Fasilitas).jpg',
     students: 60,
@@ -97,7 +98,7 @@ const ProgramData: CourseType[] = [
   //   facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
   // },
   {
-    heading: 'Program Khusus IUP (Privat)',
+    heading: 'Program Khusus IUP',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Privat_.jpg',
     students: 40,
@@ -112,7 +113,7 @@ const ProgramData: CourseType[] = [
     ]
   },
   {
-    heading: 'Program Sukses SNBT (Kelas 12)',
+    heading: 'Program Sukses SNBT',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program SNBT SMA/Program Sukses SNBT (Kelas 12) - Group Online.jpg',
     students: 200,
@@ -123,7 +124,7 @@ const ProgramData: CourseType[] = [
     facilities: 'Free Placement Test, Learning Assessment Report, Modul Pembelajaran Lengkap Detail Sistematis dan Terupdate, Dibimbing Guru Ahli SNBT Profesional, Tryout SNBT, Free Formulir SNBT'
   },
   {
-    heading: 'Program Exclusive TKA SMA (12)',
+    heading: 'Program Exclusive TKA SMA',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program TKA SMA/Program Exclusive TKA SMA (12) - Privat.jpg',
     students: 80,
@@ -134,7 +135,7 @@ const ProgramData: CourseType[] = [
     facilities: 'FREE PLACEMENT TEST, LEARNING ASSESSMENT REPORT, MODUL BELAJAR, LATIHAN SOAL-SOAL TKA, TRYOUT, DIBIMBING GURU AHLI TKA PROFESSIONAL, PERSONAL COACHING, STRATEGI BELAJAR DAN UJIAN EFEKTIF'
   },
   {
-    heading: 'Program Khusus TKA (Group Online)',
+    heading: 'Harusnya Program Sukses TKA',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program TKA SMA/Program Khusus TKA - Group Online.jpg',
     students: 150,
@@ -170,20 +171,29 @@ const ProgramData: CourseType[] = [
 
 const TestimonialData: TestimonialType[] = [
   {
-    name: 'Nael',
-    profession: 'FH UI KKI',
+    name: 'NAEL',
+    profession: 'FH HUKUM IUP',
     comment:
-      'Berhasil masuk FH UI KKI berkat program Bloome! Mentornya sangat berpengalaman dan materinya lengkap. Program persiapan yang sangat membantu untuk lolos ke fakultas hukum terbaik.',
-    imgSrc: '/images/testimonial/mhs1.jpg',
+      'Belajar dengan para tutor Bloome Education sangat seru karena sangat open to discussions dan penjelasan selalu komprehensif dengan approach yang interaktif.',
+    imgSrc: '/images/testimonial/1.jpg',
     rating: 5,
     videoUrl: null
   },
   {
     name: 'Aditya',
-    profession: 'FTTM ITB PROGRAM IUP',
+    profession: 'FTTM ITB IUP',
     comment:
-      'Program IUP Bloome memberikan strategi jitu untuk lolos ke ITB. Sukses diterima di FTTM ITB melalui jalur IUP! Recommended banget untuk yang target kampus internasional.',
-    imgSrc: '/images/testimonial/mhs2.jpg',
+      'Para pengajar Bloome Education ini sangat jago dalam menjelaskan sulit yang sulit. Penjelasan materi runtut dan mudah dipahami.',
+    imgSrc: '/images/testimonial/2.jpg',
+    rating: 5,
+    videoUrl: null
+  },
+  {
+    name: 'NISA',
+    profession: 'FK UI',
+    comment:
+      'Akhirnya mimpi saya terwujud masuk Kedokteran di UI. Terima kasih tutor Bloome Education sudah membimbing saya dalam memahami soal-soal UTBK dan Mandiri.',
+    imgSrc: '/images/testimonial/3.jpg',
     rating: 5,
     videoUrl: null
   },
@@ -202,28 +212,35 @@ const FooterLinkData: FooterLinkType[] = [
   {
     section: 'Program',
     links: [
-      { label: 'LBEE Excellent Program (Full Facilities)', href: '/#program' },
-      { label: 'Program 2 Tahun SMA (Full Facilities)', href: '/#program' },
-      { label: 'Program 2 Tahun SMA', href: '/#program' },
-      { label: 'Program 2 Tahun SMP', href: '/#program' },
-      { label: 'Program Khusus IUP (Group Online & Offline)', href: '/#program' },
-      { label: 'Program Khusus IUP (Group)', href: '/#program' },
-      { label: 'Program Khusus IUP (Privat Full)', href: '/#program' },
-      { label: 'Program Khusus IUP (Privat)', href: '/#program' },
-      { label: 'Program Sukses SNBT (Kelas 12)', href: '/#program' },
-      { label: 'Program Exclusive TKA SMA (12)', href: '/#program' },
-      { label: 'Program Khusus TKA (Group Online)', href: '/#program' },
       { label: 'Medicine Mastery Program', href: '/#program' },
       { label: 'LBEE Excellent Program', href: '/#program' },
-    ],
+      { label: 'Program 2 Tahun SMA', href: '/#program' },
+      { label: 'Program 2 Tahun SMP', href: '/#program' },
+      { label: 'Program Khusus IUP (Group)', href: '/#program' },
+      { label: 'Program Khusus IUP (Privat)', href: '/#program' },
+      { label: 'Program Sukses SNBT', href: '/#program' },
+      { label: 'Program Exclusive TKA SMA', href: '/#program' },
+      { label: 'Harusnya Program Sukses TKA', href: '/#program' },
+    ]
   },
 ]
+
+// export const transformedFooterLinks: FooterLinkType[] = FooterLinkData.flatMap((section) => {
+//   if (section.links.length <= 5) return [section];
+
+//   const chunks = chunkArray(section.links, 5);
+//   return chunks.map((chunk, index) => ({
+//     section: index === 0 ? section.section : `${section.section} ${index + 1}`,
+//     links: chunk,
+//   }));
+// });
 
 export const GET = () => {
   return NextResponse.json({
     HeaderData,
     ProgramData,
     TestimonialData,
+    // FooterLinkData: transformedFooterLinks,
     FooterLinkData,
   })
 }

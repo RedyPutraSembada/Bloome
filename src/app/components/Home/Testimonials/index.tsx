@@ -33,7 +33,7 @@ const Testimonial = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
@@ -50,7 +50,7 @@ const Testimonial = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -59,35 +59,6 @@ const Testimonial = () => {
         },
       },
     ],
-  }
-
-  const renderStars = (rating: number) => {
-    const fullStars = Math.floor(rating)
-    const halfStars = rating % 1 >= 0.5 ? 1 : 0
-    const emptyStars = 5 - fullStars - halfStars
-
-    return (
-      <>
-        {Array(fullStars).fill(
-          <Icon
-            icon='tabler:star-filled'
-            className='text-yellow-500 text-xl inline-block'
-          />
-        )}
-        {halfStars > 0 && (
-          <Icon
-            icon='tabler:star-half-filled'
-            className='text-yellow-500 text-xl inline-block'
-          />
-        )}
-        {Array(emptyStars).fill(
-          <Icon
-            icon='tabler:star-filled'
-            className='text-gray-400 text-xl inline-block'
-          />
-        )}
-      </>
-    )
   }
 
   const containerVariants = {
@@ -131,69 +102,59 @@ const Testimonial = () => {
                 ))
               : testimonial.map((items, i) => (
                   <motion.div key={i} variants={itemVariants}>
-                    <div
-                      className={
-                        'bg-white m-3 px-3 pt-3 pb-12 shadow-md rounded-2xl h-full border border-black/10 capitalize'
-                      }>
-                      {/* <div className='absolute top-[-45px]'>
-                        <Image
-                          src={items.imgSrc}
-                          alt={items.name}
-                          width={70}
-                          height={70}
-                          className='inline-block rounded-full border border-black/10'
+                    <div className='bg-white m-3 p-6 shadow-lg rounded-2xl h-full border border-gray-100 relative'>
+                      {/* Quote Icon */}
+                      <div className='absolute top-4 left-4'>
+                        <Icon
+                          icon='mdi:format-quote-close'
+                          className='text-4xl text-gray-400'
                         />
-                      </div> */}
-                      
-                      {/* Video Testimoni atau Gambar - berdasarkan kondisi */}
-                      <div className='mb-4'>
-                        {items.videoUrl ? (
-                          <>
-                            <video 
-                              className='w-full h-64 object-cover rounded-xl shadow-lg'
-                              controls
-                              poster={items.imgSrc}
-                            >
-                              <source src={items.videoUrl} type='video/mp4' />
-                              Your browser does not support the video tag.
-                            </video>
-                            <p className='text-xs text-primary font-medium mt-2 flex items-center gap-1'>
-                              <Icon icon='mdi:video' className='text-sm' />
-                              Video Testimoni
-                            </p>
-                          </>
-                        ) : (
-                          <>
-                            <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden">
-                              <Image
-                                src={items.imgSrc}
-                                alt="program-image"
-                                fill
-                                className="object-cover rounded-2xl"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 389px"
-                              />
-                            </div>
-                            <p className='text-xs text-primary font-medium mt-2 flex items-center gap-1'>
-                              <Icon icon='mdi:camera' className='text-sm' />
-                              Foto Testimoni
-                            </p>
-                          </>
-                        )}
                       </div>
                       
-                      <p className='text-base font-normal text-darkgray my-4'>
-                        {items.comment}
-                      </p>
-                      <div className='flex justify-between items-center'>
-                        <div>
-                          <p className='text-lg font-medium text-darkbrown pt-4 pb-2'>
+                      {/* Testimonial Text */}
+                      <div className='mt-8 mb-6'>
+                        <p className='text-base text-midnight_text leading-relaxed pl-8'>
+                          {items.comment}
+                        </p>
+                      </div>
+                      
+                      {/* Author Information */}
+                      <div className='flex items-center gap-4 pt-4 border-t border-gray-100'>
+                        {/* Avatar */}
+                        <div className='relative'>
+                          <div className='w-12 h-12 rounded-full border-2 border-primary overflow-hidden'>
+                            <Image
+                              src={items.imgSrc}
+                              alt={items.name}
+                              width={48}
+                              height={48}
+                              className='w-full h-full object-cover'
+                            />
+                          </div>
+                        </div>
+                        
+                        {/* Name and Affiliation */}
+                        <div className='flex-1'>
+                          <p className='text-lg font-semibold text-midnight_text'>
                             {items.name}
                           </p>
-                          <p className='text-sm font-normal text-lightgray pb-2'>
+                          <p className='text-sm text-primary font-medium'>
                             {items.profession}
                           </p>
                         </div>
-                        <div className='flex'>{renderStars(items.rating)}</div>
+                        
+                        {/* Rating */}
+                        {/* <div className='flex items-center gap-1'>
+                          {Array.from({ length: 5 }).map((_, index) => (
+                            <Icon
+                              key={index}
+                              icon={index < items.rating ? 'tabler:star-filled' : 'tabler:star'}
+                              className={`text-lg ${
+                                index < items.rating ? 'text-yellow-500' : 'text-gray-300'
+                              }`}
+                            />
+                          ))}
+                        </div> */}
                       </div>
                     </div>
                   </motion.div>

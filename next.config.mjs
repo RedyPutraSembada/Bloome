@@ -3,6 +3,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  webpack: (config, { isServer }) => {
+    config.cache = {
+      type: 'filesystem',
+      maxMemoryGenerations: 1, // untuk mengurangi penggunaan RAM
+    };
 
-export default nextConfig
+    return config;
+  },
+};
+
+export default nextConfig;
