@@ -188,7 +188,7 @@ const Programs = () => {
                           <div className='mt-4'>
                             <h4 className='text-sm font-semibold text-primary mb-2'>Deskripsi Program:</h4>
                             <p className='text-sm text-black/70 leading-relaxed'>
-                              {items.description}
+                              {items.description.charAt(0).toUpperCase() + items.description.slice(1).toLowerCase()}
                             </p>
                           </div>
                         )}
@@ -197,9 +197,14 @@ const Programs = () => {
                         {items.facilities && (
                           <div className='mt-4'>
                             <h4 className='text-sm font-semibold text-primary mb-2'>Fasilitas Program:</h4>
-                            <p className='text-sm text-black/70 leading-relaxed'>
-                              {items.facilities}
-                            </p>
+                            <ul className='text-sm text-black/70 leading-relaxed space-y-1'>
+                              {items.facilities.split(', ').map((facility, index) => (
+                                <li key={index} className='flex items-start gap-2'>
+                                  <span className='text-primary text-xs mt-1'>•</span>
+                                  <span>{facility.charAt(0).toUpperCase() + facility.slice(1).toLowerCase()}</span>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
                         )}
                         
