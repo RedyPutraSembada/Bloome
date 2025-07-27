@@ -55,14 +55,14 @@ Bloome adalah platform bimbel yang menyediakan berbagai program exclusive untuk 
 - **3 Testimoni**: Dengan rating bintang dan komentar lengkap
 
 ### 5. **Contact Us** ✅
-- **Nomor WA Admin**: +62 851-5613-938
+- **Nomor WA Admin**: +62 811-8800-9569
 - **Lokasi Bimbel Bloome**: Jakarta, Indonesia
 - **Jam Operasional**: Senin-Jumat 08:00-21:00, Sabtu 08:00-18:00, Minggu 09:00-16:00
 - **Form Kontak**: Dengan validasi dan WhatsApp integration
 
 ### 6. **Register** ✅
 - **Sign Up/Login**: Tombol untuk pendaftaran dan login
-- **WhatsApp Integration**: Redirect ke nomor 628515613938 untuk pendaftaran
+- **WhatsApp Integration**: Redirect ke nomor 6281188009569 untuk pendaftaran
 - **Call-to-Action**: Design gradient yang menarik
 
 ## 🛠️ Teknologi yang Digunakan
@@ -92,7 +92,7 @@ Website ini fully responsive dengan breakpoints:
 
 ## 📞 Kontak
 
-- **WhatsApp**: +62 851-5613-938
+- **WhatsApp**: +62 811-8800-9569
 - **Email**: info@bloome.id
 - **Lokasi**: Jakarta, Indonesia
 

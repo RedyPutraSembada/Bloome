@@ -41,7 +41,7 @@ const Hero = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div className='col-span-6 flex flex-col gap-8 items-center lg:items-start' variants={itemVariants}>
-            <motion.div className='flex gap-2 mx-auto lg:mx-0' variants={itemVariants}>
+            {/* <motion.div className='flex gap-2 mx-auto lg:mx-0' variants={itemVariants}>
               <Icon
                 icon='solar:verified-check-bold'
                 className='text-success text-xl inline-block me-2'
@@ -49,20 +49,28 @@ const Hero = () => {
               <p className='text-success text-sm font-semibold text-center lg:text-start tracking-widest uppercase'>
                 Dapatkan diskon 30% untuk pendaftaran pertama
               </p>
-            </motion.div>
+            </motion.div> */}
             <motion.h1 
               className='text-midnight_text lg:text-start text-center font-semibold leading-tight capitalize text-4xl sm:text-5xl lg:text-65'
               variants={itemVariants}
             >
-              Bersama Bloome, Wujudkan Kampus Impianmu
+              Your Gateway to Top Universities
             </motion.h1>
             <motion.p 
               className='text-black/70 text-base sm:text-lg lg:text-start text-center max-w-xl capitalize'
               variants={itemVariants}
             >
-              Bloome menyediakan berbagai program exclusive: UTBK, SIMAK UI, SIMAK KKI UI, IUP UGM, IUP ITB, Ujian Mandiri PTN, Smartcamp FK, Smartcamp Hukum.
+              Bloome Education adalah lembaga konsultan jasa pendidikan yang berfokus pada penyediaan
+              bimbingan belajar intensif bagi siswa-siswi SMA kelas 12. Lembaga ini lahir berasal
+              dari kesadaran para alumni yang berasal dari UI, UGM, ITB untuk membentuk
+              lembaga belajar yang unggul dan berkualitas. Kami membantu siswa-siswi SMA
+              kelas 12 mempersiapkan diri menghadapi UTBK (Ujian Tertulis Berbasis Komputer),
+              Ujian Mandiri PTN, hingga Ujian International Undergraduate Program (IUP).
+              Berlokasi di Menara Batavia, Jakarta, Bloome Education hadir dengan visi untuk
+              membuka jalan menuju kampus impian melalui bimbingan berkualitas dan strategi
+              belajar yang efektif.
             </motion.p>
-            <motion.div 
+            {/* <motion.div 
               className='flex items-center justify-between pt-10 lg:pt-4 flex-wrap gap-4'
               variants={itemVariants}
             >
@@ -102,7 +110,7 @@ const Hero = () => {
                   Garansi Lolos
                 </p>
               </motion.div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
           <motion.div 
             className='col-span-6 flex justify-center'
@@ -127,16 +135,34 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <motion.h2 
-            className='text-midnight_text text-center font-semibold mb-12'
+            className='text-midnight_text text-center font-semibold mb-8'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Kenapa Harus Pilih Bloome?
+            WHY BLOOME?
           </motion.h2>
+          <motion.p 
+            className='text-black/70 text-center mb-8 max-w-4xl mx-auto'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            At Bloome Education, we don't just prepare students for exams — we prepare them for life. Through personalized mentoring and our proven 3-Pillar Approach, we help students unlock their true potential, build strong, consistent study habits, and achieve admission into their dream universities.
+          </motion.p>
+          <motion.p 
+            className='text-black/70 text-center mb-12 max-w-4xl mx-auto'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            Bloome isn't just another tutoring center, it's a place where students grow with clarity, confidence, and purpose. Bloome makes you ready. For exams, for university, for life. Not just tutoring. Bloome builds you up.
+          </motion.p>
           <motion.div 
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'
+            className='grid grid-cols-1 md:grid-cols-3 gap-8'
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -149,13 +175,13 @@ const Hero = () => {
                 transition={{ duration: 0.2 }}
               >
                 <Icon
-                  icon='solar:users-group-rounded-linear'
+                  icon='solar:star-linear'
                   className='text-primary text-2xl'
                 />
               </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Mentor Berpengalaman</h3>
+              <h3 className='text-lg font-semibold mb-2'>Unlock True Potential</h3>
               <p className='text-black/70 text-sm'>
-                Mentor dari kampus ternama dengan pengalaman mengajar bertahun-tahun
+                We help students discover and maximize their natural abilities through personalized guidance
               </p>
             </motion.div>
             <motion.div className='text-center' variants={itemVariants}>
@@ -169,9 +195,9 @@ const Hero = () => {
                   className='text-primary text-2xl'
                 />
               </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Materi Terupdate</h3>
+              <h3 className='text-lg font-semibold mb-2'>Build Study Habits</h3>
               <p className='text-black/70 text-sm'>
-                Materi selalu update sesuai dengan perubahan kurikulum terbaru
+                Develop strong, consistent study habits that last beyond exams and into university life
               </p>
             </motion.div>
             <motion.div className='text-center' variants={itemVariants}>
@@ -185,25 +211,9 @@ const Hero = () => {
                   className='text-primary text-2xl'
                 />
               </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Target Spesifik</h3>
+              <h3 className='text-lg font-semibold mb-2'>Achieve Dream Universities</h3>
               <p className='text-black/70 text-sm'>
-                Program khusus untuk target kampus dan jurusan impian Anda
-              </p>
-            </motion.div>
-            <motion.div className='text-center' variants={itemVariants}>
-              <motion.div 
-                className='bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Icon
-                  icon='solar:shield-check-linear'
-                  className='text-primary text-2xl'
-                />
-              </motion.div>
-              <h3 className='text-lg font-semibold mb-2'>Garansi Lolos</h3>
-              <p className='text-black/70 text-sm'>
-                Garansi uang kembali jika tidak lolos ke kampus target
+                Successfully gain admission into your dream universities through our proven approach
               </p>
             </motion.div>
           </motion.div>

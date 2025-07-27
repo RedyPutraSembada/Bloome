@@ -43,7 +43,7 @@ const Footer = () => {
                 <Icon icon='tabler:brand-instagram' />
               </Link>
               <Link
-                href='https://wa.me/628515613938'
+                href='https://wa.me/6281188009569'
                 className='hover:text-primary text-black text-3xl'>
                 <Icon icon='mdi:whatsapp' />
               </Link>
@@ -82,13 +82,13 @@ const Footer = () => {
                   Jakarta, Indonesia
                 </p>
               </div>
-              <Link href='tel:+628515613938' className='flex items-center w-fit'>
+              <Link href='tel:+6281188009569' className='flex items-center w-fit'>
                 <Icon
                   icon='mdi:whatsapp'
                   className='text-primary text-3xl lg:text-2xl inline-block me-2'
                 />
                 <p className='text-black/60 hover:text-primary text-base'>
-                  +62 851-5613-938
+                  +62 811-8800-9569
                 </p>
               </Link>
               <Link href='mailto:info@bloome.id' className='flex items-center w-fit'>

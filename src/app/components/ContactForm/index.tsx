@@ -77,7 +77,7 @@ const ContactForm = () => {
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent('Halo Bloome! Saya ingin bertanya tentang program bimbel.')
-    const whatsappUrl = `https://wa.me/628515613938?text=${message}`
+    const whatsappUrl = `https://wa.me/6281188009569?text=${message}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -130,7 +130,7 @@ const ContactForm = () => {
                   />
                   <div>
                     <p className='font-medium'>Nomor WA Admin</p>
-                    <p className='text-black/60'>+62 851-5613-938</p>
+                    <p className='text-black/60'>+62 811-8800-9569</p>
                   </div>
                 </div>
                 <div className='flex items-center gap-3'>

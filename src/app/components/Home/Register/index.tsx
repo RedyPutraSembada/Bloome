@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const Register = () => {
   const handleWhatsAppRegister = () => {
     const message = encodeURIComponent('Halo Bloome! Saya ingin mendaftar program bimbel. Mohon informasi lebih lanjut.')
-    const whatsappUrl = `https://wa.me/628515613938?text=${message}`
+    const whatsappUrl = `https://wa.me/6281188009569?text=${message}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -81,7 +81,7 @@ const Register = () => {
                 variants={itemVariants}
               >
                 <p className='text-white/75 text-sm'>
-                  Atau hubungi kami di: <span className='font-semibold'>+62 851-5613-938</span>
+                  Atau hubungi kami di: <span className='font-semibold'>+62 811-8800-9569</span>
                 </p>
               </motion.div>
             </div>

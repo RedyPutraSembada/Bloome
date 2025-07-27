@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/app/components/Layout/Header'
 import Footer from '@/app/components/Layout/Footer'
 import ScrollToTop from '@/app/components/ScrollToTop'
+import SplashScreen from '@/app/components/Common/SplashScreen'
 
 const font = Poppins({
   subsets: ['latin'],
@@ -20,6 +21,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
       <body className={`${font.className} overflow-x-hidden`}>
+        <SplashScreen />
         <Header />
         {children}
         <Footer />

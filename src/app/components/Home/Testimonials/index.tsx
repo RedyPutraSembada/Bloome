@@ -33,8 +33,8 @@ const Testimonial = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToShow: 2,
+    slidesToScroll: 1,
     arrows: false,
     autoplay: true,
     speed: 500,
@@ -145,19 +145,40 @@ const Testimonial = () => {
                         />
                       </div> */}
                       
-                      {/* Video Testimoni - untuk semua testimoni */}
+                      {/* Video Testimoni atau Gambar - berdasarkan kondisi */}
                       <div className='mb-4'>
-                        <video 
-                          className='w-full h-48 object-cover rounded-lg'
-                          controls
-                          poster={items.imgSrc}
-                        >
-                          <source src={items.videoUrl || ''} type='video/mp4' />
-                          Your browser does not support the video tag.
-                        </video>
-                        <p className='text-xs text-primary font-medium mt-2'>
-                          🎥 Video Testimoni
-                        </p>
+                        {items.videoUrl ? (
+                          <>
+                            <video 
+                              className='w-full h-64 object-cover rounded-xl shadow-lg'
+                              controls
+                              poster={items.imgSrc}
+                            >
+                              <source src={items.videoUrl} type='video/mp4' />
+                              Your browser does not support the video tag.
+                            </video>
+                            <p className='text-xs text-primary font-medium mt-2 flex items-center gap-1'>
+                              <Icon icon='mdi:video' className='text-sm' />
+                              Video Testimoni
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden">
+                              <Image
+                                src={items.imgSrc}
+                                alt="program-image"
+                                fill
+                                className="object-cover rounded-2xl"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 389px"
+                              />
+                            </div>
+                            <p className='text-xs text-primary font-medium mt-2 flex items-center gap-1'>
+                              <Icon icon='mdi:camera' className='text-sm' />
+                              Foto Testimoni
+                            </p>
+                          </>
+                        )}
                       </div>
                       
                       <p className='text-base font-normal text-darkgray my-4'>

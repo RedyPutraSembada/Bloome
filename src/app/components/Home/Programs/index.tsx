@@ -109,7 +109,7 @@ const Programs = () => {
       `- Harga: ${formattedPrice}\n\n` +
       `Mohon informasi lebih lanjut tentang program ini. Terima kasih!`
     )
-    const whatsappUrl = `https://wa.me/628515613938?text=${message}`
+    const whatsappUrl = `https://wa.me/6281188009569?text=${message}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -179,9 +179,9 @@ const Programs = () => {
                             {items.heading}
                           </h6>
                         </Link>
-                        <p className='text-base font-normal pt-6 text-black/75'>
+                        {/* <p className='text-base font-normal pt-6 text-black/75'>
                           {items.name}
-                        </p>
+                        </p> */}
                         
                         {/* Deskripsi Program */}
                         {items.description && (
@@ -203,7 +203,7 @@ const Programs = () => {
                           </div>
                         )}
                         
-                        <div className='flex flex-col lg:flex-row justify-between items-center py-6 border-b'>
+                        {/* <div className='flex flex-col lg:flex-row justify-between items-center py-6 border-b'>
                           <div className='flex items-center gap-4'>
                             <p className='text-red-700 text-xl font-medium'>
                               {items.rating.toFixed(1)}
@@ -233,7 +233,7 @@ const Programs = () => {
                               {items.students} siswa
                             </p>
                           </div>
-                        </div>
+                        </div> */}
                         
                         {/* Tombol Daftar */}
                         <div className='mt-6'>
