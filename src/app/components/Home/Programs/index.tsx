@@ -248,11 +248,14 @@ const Programs = () => {
                             />
                           )}
                         </div>
-                        <div className='absolute right-5 -bottom-3 bg-secondary rounded-full p-4'>
-                          <p className='text-white uppercase text-center text-sm font-medium'>
-                            terpopuler
-                          </p>
-                        </div>
+                        {/* Terfavorit Badge - Only show for programs with terfavorit: true */}
+                        {items.terfavorit && (
+                          <div className='absolute right-5 -bottom-4 bg-secondary rounded-full p-4'>
+                            <p className='text-white uppercase text-center text-sm font-medium'>
+                              terfavorit
+                            </p>
+                          </div>
+                        )}
                       </div>
 
                       <div className='px-3 pt-6'>

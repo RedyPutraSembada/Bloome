@@ -6,6 +6,7 @@ export interface CourseType {
   classes: number
   price: number
   rating: number
+  terfavorit?: boolean
   description?: string
   facilities?: string
   images?: string[]
