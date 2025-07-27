@@ -23,7 +23,11 @@ const ProgramData: CourseType[] = [
     price: 4500000,
     rating: 4.9,
     description: 'Program privat eksklusif untuk persiapan masuk PTN Top di jurusan Hukum, Bisnis, Ekonomi, dan Teknik jalur Reguler maupun Internasional, dilengkapi dengan fasilitas lengkap.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan ujian SAT dan IELTS-TOEFL, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Free 1x Test SAT, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke kampus UI dan ITB'
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan ujian SAT dan IELTS-TOEFL, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Free 1x Test SAT, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke kampus UI dan ITB',
+    images: [
+      '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat.jpg',
+      '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat (Materi & Fasilitas).jpg'
+    ]
   },
   {
     heading: 'Program 2 Tahun SMA (Full Facilities)',
@@ -34,19 +38,23 @@ const ProgramData: CourseType[] = [
     price: 5000000,
     rating: 4.8,
     description: 'Program privat eksklusif 2 tahun mulai dari kelas 10 SMA. Tahun pertama fokus kuasai materi sekolah, tahun kedua siap tempur seleksi PTN favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI',
+    images: [
+      '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat_.jpg',
+      '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat (Materi dan Fasilitas).jpg'
+    ]
   },
-  {
-    heading: 'Program 2 Tahun SMA',
-    name: 'Bloome Education',
-    imgSrc: '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat_.jpg',
-    students: 120,
-    classes: 24,
-    price: 5000000,
-    rating: 4.8,
-    description: 'Program privat eksklusif 2 tahun mulai dari kelas 10 SMA. Tahun pertama fokus kuasai materi sekolah, tahun kedua siap tempur seleksi PTN favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
-  },
+  // {
+  //   heading: 'Program 2 Tahun SMA',
+  //   name: 'Bloome Education',
+  //   imgSrc: '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat_.jpg',
+  //   students: 120,
+  //   classes: 24,
+  //   price: 5000000,
+  //   rating: 4.8,
+  //   description: 'Program privat eksklusif 2 tahun mulai dari kelas 10 SMA. Tahun pertama fokus kuasai materi sekolah, tahun kedua siap tempur seleksi PTN favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
+  //   facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
+  // },
   {
     heading: 'Program 2 Tahun SMP',
     name: 'Bloome Education',
@@ -56,7 +64,11 @@ const ProgramData: CourseType[] = [
     price: 3500000,
     rating: 4.7,
     description: 'Program privat eksklusif 2 tahun mulai dari kelas 8 SMP. Tahun pertama fokus kuasai materi sekolah, tahun kedua siap tempur seleksi SMA favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
+    facilities: 'Learning Assessment Report, Dibimbing Tutor Berpengalaman, Menggunakan Metode Master, Bimbingan Konseling, Konsultasi Akademik, Persiapan PTS PAS PAT, Persiapan ANBK (Asesmen Nasional Berbasis Komputer), Persiapan Ujian TKA (Tes Kemampuan Akademik)',
+    images: [
+      '/images/programs/Program 2 Tahun SMP/Program 2 Tahun SMP.jpg',
+      '/images/programs/Program 2 Tahun SMP/Fasilitas Program 2 Tahun SMP.jpg'
+    ]
   },
   {
     heading: 'Program Khusus IUP (Group Online & Offline)',
@@ -67,30 +79,23 @@ const ProgramData: CourseType[] = [
     price: 45000000,
     rating: 4.9,
     description: 'Program Group class eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
-    facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
+    facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional',
+    images: [
+      '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline.jpg',
+      '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline (Materi dan Fasilitas).jpg'
+    ]
   },
-  {
-    heading: 'Program Khusus IUP (Group)',
-    name: 'Bloome Education',
-    imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline.jpg',
-    students: 60,
-    classes: 16,
-    price: 45000000,
-    rating: 4.9,
-    description: 'Program Group class eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
-    facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
-  },
-  {
-    heading: 'Program Khusus IUP (Privat Full)',
-    name: 'Bloome Education',
-    imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Privat (Materi dan Fasilitas).jpg',
-    students: 40,
-    classes: 20,
-    price: 85000000,
-    rating: 5.0,
-    description: 'Program privat eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Bimbingan Penulisan Motivation Letter, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Free 1x Formulir Pendaftaran IUP, Persiapan Test Toefl/IELTS, IUP Camp akomodasi 1 bulan, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
-  },
+  // {
+  //   heading: 'Program Khusus IUP (Group)',
+  //   name: 'Bloome Education',
+  //   imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline.jpg',
+  //   students: 60,
+  //   classes: 16,
+  //   price: 45000000,
+  //   rating: 4.9,
+  //   description: 'Program Group class eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
+  //   facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
+  // },
   {
     heading: 'Program Khusus IUP (Privat)',
     name: 'Bloome Education',
@@ -100,7 +105,11 @@ const ProgramData: CourseType[] = [
     price: 85000000,
     rating: 5.0,
     description: 'Program privat eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Bimbingan Penulisan Motivation Letter, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Free 1x Formulir Pendaftaran IUP, Persiapan Test Toefl/IELTS, IUP Camp akomodasi 1 bulan, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Bimbingan Penulisan Motivation Letter, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Free 1x Formulir Pendaftaran IUP, Persiapan Test Toefl/IELTS, IUP Camp akomodasi 1 bulan, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional',
+    images: [
+      '/images/programs/Program IUP_/Program Khusus IUP - Privat_.jpg',
+      '/images/programs/Program IUP_/Program Khusus IUP - Privat (Materi dan Fasilitas).jpg'
+    ]
   },
   {
     heading: 'Program Sukses SNBT (Kelas 12)',
@@ -146,17 +155,17 @@ const ProgramData: CourseType[] = [
     description: 'Program persiapan privat eksklusif yang dirancang untuk membantu siswa mewujudkan impian masuk ke fakultas kedokteran terbaik, baik jalur Reguler maupun Internasional.',
     facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
   },
-  {
-    heading: 'LBEE Excellent Program',
-    name: 'Bloome Education',
-    imgSrc: '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat.jpg',
-    students: 100,
-    classes: 20,
-    price: 4500000,
-    rating: 4.9,
-    description: 'Program privat eksklusif untuk persiapan masuk PTN Top di jurusan Hukum, Bisnis, Ekonomi, dan Teknik jalur Reguler maupun Internasional.',
-    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
-  },
+  // {
+  //   heading: 'LBEE Excellent Program',
+  //   name: 'Bloome Education',
+  //   imgSrc: '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat.jpg',
+  //   students: 100,
+  //   classes: 20,
+  //   price: 4500000,
+  //   rating: 4.9,
+  //   description: 'Program privat eksklusif untuk persiapan masuk PTN Top di jurusan Hukum, Bisnis, Ekonomi, dan Teknik jalur Reguler maupun Internasional.',
+  //   facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke UI'
+  // },
 ]
 
 const TestimonialData: TestimonialType[] = [

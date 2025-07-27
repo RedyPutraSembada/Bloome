@@ -14,6 +14,7 @@ import CourseSkeleton from '../../Skeleton/Course'
 const Programs = () => {
   const [programs, setPrograms] = useState<CourseType[]>([])
   const [loading, setLoading] = useState(true)
+  const [imageSlides, setImageSlides] = useState<{ [key: number]: number }>({})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -113,6 +114,27 @@ const Programs = () => {
     window.open(whatsappUrl, '_blank')
   }
 
+  const handleImageSlide = (programIndex: number, direction: 'prev' | 'next') => {
+    const currentSlide = imageSlides[programIndex] || 0
+    const program = programs[programIndex]
+    
+    if (program?.images) {
+      const totalImages = program.images.length
+      let newSlide: number
+      
+      if (direction === 'prev') {
+        newSlide = currentSlide === 0 ? totalImages - 1 : currentSlide - 1
+      } else {
+        newSlide = currentSlide === totalImages - 1 ? 0 : currentSlide + 1
+      }
+      
+      setImageSlides(prev => ({
+        ...prev,
+        [programIndex]: newSlide
+      }))
+    }
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -157,14 +179,74 @@ const Programs = () => {
                   <motion.div key={i} variants={cardVariants}>
                     <div className='bg-white m-3 px-3 pt-3 pb-12 shadow-md rounded-2xl h-full border border-black/10 capitalize'>
                       <div className='relative rounded-3xl'>
-                        <div className='rounded-2xl'>
-                          <Image
-                            src={items.imgSrc}
-                            alt='program-image'
-                            width={389}
-                            height={262}
-                            className='w-full rounded-2xl'
-                          />
+                        <div className='rounded-2xl overflow-hidden'>
+                          {/* Image Slider for programs with multiple images */}
+                          {items.images && items.images.length > 1 ? (
+                            <div className='relative'>
+                              <div className='flex transition-transform duration-300 ease-in-out' style={{
+                                transform: `translateX(-${(imageSlides[i] || 0) * 100}%)`
+                              }}>
+                                {items.images.map((image, imgIndex) => (
+                                  <Image
+                                    key={imgIndex}
+                                    src={image}
+                                    alt='program-image'
+                                    width={389}
+                                    height={262}
+                                    className='w-full rounded-2xl flex-shrink-0'
+                                  />
+                                ))}
+                              </div>
+                              {/* Navigation Arrows */}
+                              <button 
+                                className='absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors z-10'
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  handleImageSlide(i, 'prev')
+                                }}
+                              >
+                                <Icon icon='mdi:chevron-left' className='text-lg' />
+                              </button>
+                              <button 
+                                className='absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors z-10'
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  handleImageSlide(i, 'next')
+                                }}
+                              >
+                                <Icon icon='mdi:chevron-right' className='text-lg' />
+                              </button>
+                              {/* Dots Indicator */}
+                              <div className='absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-10'>
+                                {items.images.map((_, dotIndex) => (
+                                  <div
+                                    key={dotIndex}
+                                    className={`w-2 h-2 rounded-full cursor-pointer transition-colors ${
+                                      dotIndex === (imageSlides[i] || 0) 
+                                        ? 'bg-white' 
+                                        : 'bg-white/50 hover:bg-white/70'
+                                    }`}
+                                    onClick={() => {
+                                      setImageSlides(prev => ({
+                                        ...prev,
+                                        [i]: dotIndex
+                                      }))
+                                    }}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <Image
+                              src={items.imgSrc}
+                              alt='program-image'
+                              width={389}
+                              height={262}
+                              className='w-full rounded-2xl'
+                            />
+                          )}
                         </div>
                         <div className='absolute right-5 -bottom-3 bg-secondary rounded-full p-4'>
                           <p className='text-white uppercase text-center text-sm font-medium'>

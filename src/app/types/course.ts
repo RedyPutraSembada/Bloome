@@ -8,4 +8,5 @@ export interface CourseType {
   rating: number
   description?: string
   facilities?: string
+  images?: string[]
 }
