@@ -10,8 +10,8 @@ const HeaderData: HeaderType[] = [
   { label: 'Beranda', href: '/' },
   { label: 'Program', href: '/#program' },
   { label: 'Testimoni', href: '/#testimoni' },
-  // { label: 'Kontak', href: '/#kontak' },
   { label: 'Daftar', href: '/#daftar' },
+  { label: 'Contact Us', href: '/#kontak' },
 ]
 
 const ProgramData: CourseType[] = [
@@ -91,7 +91,7 @@ const ProgramData: CourseType[] = [
     ]
   },
   {
-    heading: 'Program Khusus IUP',
+    heading: 'Program Khusus IUP (Group)',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline (Materi dan Fasilitas).jpg',
     students: 60,
@@ -118,7 +118,7 @@ const ProgramData: CourseType[] = [
   //   facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional'
   // },
   {
-    heading: 'Program Khusus IUP',
+    heading: 'Program Khusus IUP (Privat)',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program IUP_/Program Khusus IUP - Privat_.jpg',
     students: 40,

@@ -111,7 +111,7 @@ const ContactForm = () => {
   ];
 
   return (
-    <section id='kontak' className='scroll-mt-12 bg-gradient-to-br from-slate-50 to-green-50'>
+    <section className='scroll-mt-12 bg-gradient-to-br from-slate-50 to-green-50'>
       <div className='container'>
         <motion.div 
           className='relative'

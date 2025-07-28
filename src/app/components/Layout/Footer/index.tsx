@@ -24,7 +24,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className='bg-deep-slate pt-10'>
+    <footer id='kontak' className='bg-deep-slate pt-10'>
       <div className='container'>
         <div className='grid grid-cols-1 sm:grid-cols-6 lg:gap-20 md:gap-24 sm:gap-12 gap-12 pb-10'>
           <div className='col-span-2'>
