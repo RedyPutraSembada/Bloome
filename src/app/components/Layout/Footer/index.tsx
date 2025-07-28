@@ -125,15 +125,11 @@ const Footer = () => {
                 <div className='space-y-2'>
                   <div className='flex justify-between items-center'>
                     <span className='text-black/60 text-sm'>Senin - Jumat</span>
-                    <span className='text-black/60 text-sm font-medium'>08:00 - 21:00</span>
+                    <span className='text-black/60 text-sm font-medium'>08:00 - 20:00</span>
                   </div>
                   <div className='flex justify-between items-center'>
-                    <span className='text-black/60 text-sm'>Sabtu</span>
-                    <span className='text-black/60 text-sm font-medium'>08:00 - 18:00</span>
-                  </div>
-                  <div className='flex justify-between items-center'>
-                    <span className='text-black/60 text-sm'>Minggu</span>
-                    <span className='text-black/60 text-sm font-medium'>09:00 - 16:00</span>
+                    <span className='text-black/60 text-sm'>Sabtu - Minggu</span>
+                    <span className='text-black/60 text-sm font-medium'>08:00 - 15:00</span>
                   </div>
                 </div>
               </div>

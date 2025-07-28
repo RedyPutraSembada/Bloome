@@ -10,7 +10,7 @@ const HeaderData: HeaderType[] = [
   { label: 'Beranda', href: '/' },
   { label: 'Program', href: '/#program' },
   { label: 'Testimoni', href: '/#testimoni' },
-  { label: 'Kontak', href: '/#kontak' },
+  // { label: 'Kontak', href: '/#kontak' },
   { label: 'Daftar', href: '/#daftar' },
 ]
 
@@ -158,7 +158,7 @@ const ProgramData: CourseType[] = [
     facilities: 'FREE PLACEMENT TEST, LEARNING ASSESSMENT REPORT, MODUL BELAJAR, LATIHAN SOAL-SOAL TKA, TRYOUT, DIBIMBING GURU AHLI TKA PROFESSIONAL, PERSONAL COACHING, STRATEGI BELAJAR DAN UJIAN EFEKTIF'
   },
   {
-    heading: 'Harusnya Program Sukses TKA',
+    heading: 'Program Sukses TKA',
     name: 'Bloome Education',
     imgSrc: '/images/programs/Program TKA SMA/Program Khusus TKA - Group Online.jpg',
     students: 150,
@@ -184,8 +184,8 @@ const ProgramData: CourseType[] = [
 
 const TestimonialData: TestimonialType[] = [
   {
-    name: 'NAEL',
-    profession: 'FH HUKUM IUP',
+    name: 'Nael',
+    profession: 'FH UI IUP',
     comment:
       'Belajar dengan para tutor Bloome Education sangat seru karena sangat open to discussions dan penjelasan selalu komprehensif dengan approach yang interaktif.',
     imgSrc: '/images/testimonial/1.jpg',
@@ -202,7 +202,7 @@ const TestimonialData: TestimonialType[] = [
     videoUrl: null
   },
   {
-    name: 'NISA',
+    name: 'Nisa',
     profession: 'FK UI',
     comment:
       'Akhirnya mimpi saya terwujud masuk Kedokteran di UI. Terima kasih tutor Bloome Education sudah membimbing saya dalam memahami soal-soal UTBK dan Mandiri.',
@@ -233,7 +233,7 @@ const FooterLinkData: FooterLinkType[] = [
       { label: 'Program Khusus IUP (Privat)', href: '/#program' },
       { label: 'Program Sukses SNBT', href: '/#program' },
       { label: 'Program Exclusive TKA SMA', href: '/#program' },
-      { label: 'Harusnya Program Sukses TKA', href: '/#program' },
+      { label: 'Program Sukses TKA', href: '/#program' },
     ]
   },
 ]

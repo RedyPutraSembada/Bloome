@@ -22,16 +22,16 @@ export default function Home() {
       <AnimatedSection delay={0.2}>
         <WhyBloome />
       </AnimatedSection>
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.2}>
         <Programs />
       </AnimatedSection>
-      <AnimatedSection delay={0.6}>
+      <AnimatedSection delay={0.2}>
         <Testimonial />
       </AnimatedSection>
-      <AnimatedSection delay={0.8}>
+      <AnimatedSection delay={0.2}>
         <ContactForm/>
       </AnimatedSection>
-      <AnimatedSection delay={1.0}>
+      <AnimatedSection delay={0.2}>
         <Register />
       </AnimatedSection>
     </main>

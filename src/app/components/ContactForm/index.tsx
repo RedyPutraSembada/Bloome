@@ -124,7 +124,7 @@ const ContactForm = () => {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16'>
             {/* Left Column - Question */}
             <motion.div 
-              className='flex flex-col justify-center w-1/2'
+              className='flex flex-col justify-center md:w-1/2'
               variants={itemVariants}
             >
               <h2 className='text-2xl lg:text-2xl xl:text-3xl font-normal text-midnight_text leading-tight mb-6'>
@@ -198,7 +198,7 @@ const ContactForm = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className='underline'>Get In Touch Now</span>
+                  <span className='underline'>Register Now</span>
                   <Icon 
                     icon='mdi:arrow-right' 
                     className='text-xl group-hover:translate-x-1 transition-transform' 
@@ -262,7 +262,7 @@ const ContactForm = () => {
         }
         
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 5s linear infinite;
         }
         
         .animate-scroll:hover {

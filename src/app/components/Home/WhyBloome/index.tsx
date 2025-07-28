@@ -155,7 +155,7 @@ const WhyBloome = () => {
             </motion.div>
             
             <motion.div 
-              className='text-center border-r border-gray-600 pr-10 md:pr-8'
+              className='text-center md:border-r md:border-gray-600 pr-10 md:pr-8'
               variants={itemVariants}
             >
               <motion.h3 
