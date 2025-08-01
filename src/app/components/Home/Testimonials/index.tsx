@@ -13,6 +13,7 @@ import TestimonialSkeleton from '../../Skeleton/Testimonial'
 const Testimonial = () => {
   const [testimonial, setTestimonial] = useState<TestimonialType[]>([])
   const [loading, setLoading] = useState(true)
+  const [animationKey, setAnimationKey] = useState(0) // Key untuk force re-render animasi
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,8 +22,11 @@ const Testimonial = () => {
         if (!res.ok) throw new Error('Failed to fetch.')
         const data = await res.json()
         setTestimonial(data.TestimonialData)
+        // Force re-render animasi dengan mengubah key
+        setTimeout(() => setAnimationKey(prev => prev + 1), 100)
       } catch (error) {
         console.error('Error fetching service:', error)
+        setTimeout(() => setAnimationKey(prev => prev + 1), 100)
       } finally {
         setLoading(false)
       }
@@ -66,14 +70,21 @@ const Testimonial = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.2 // Tambahkan delay untuk children
       }
     }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 }
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
   };
 
   return (
@@ -81,8 +92,7 @@ const Testimonial = () => {
       <div className='container pt-16'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }} // Gunakan animate untuk konsistensi
           transition={{ duration: 0.6 }}
         >
           <h2 className='text-midnight_text w-96 md:w-full text-2xl md:text-5xl'>Testimoni Alumni Bloome</h2>
@@ -90,10 +100,10 @@ const Testimonial = () => {
         </motion.div>
         
         <motion.div
+          key={`testimonial-${animationKey}`} // Key yang berubah untuk force re-render animasi
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          animate={loading ? "hidden" : "visible"} // Animate berdasarkan loading state
         >
           <Slider {...settings}>
             {loading

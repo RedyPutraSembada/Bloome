@@ -131,7 +131,7 @@ const WhyBloome = () => {
             viewport={{ once: true, margin: "-50px" }}
           >
             <motion.div 
-              className='text-center border-r border-gray-600 pr-10 md:pr-8'
+              className='text-center relative after:content-[""] after:absolute after:right-[-12px] after:top-0 after:bottom-0 after:w-px after:bg-gray-600 md:after:right-[-16px] md:border-r md:border-gray-600 md:pr-8 md:after:hidden'
               variants={itemVariants}
             >
               <motion.h3 
@@ -155,7 +155,7 @@ const WhyBloome = () => {
             </motion.div>
             
             <motion.div 
-              className='text-center md:border-r md:border-gray-600 pr-10 md:pr-8'
+              className='text-center md:border-r md:border-gray-600 md:pr-8'
               variants={itemVariants}
             >
               <motion.h3 
@@ -179,7 +179,7 @@ const WhyBloome = () => {
             </motion.div>
             
             <motion.div 
-              className='text-center border-r border-gray-600 pr-10 md:pr-8'
+              className='text-center relative after:content-[""] after:absolute after:right-[-12px] after:top-0 after:bottom-0 after:w-px after:bg-gray-600 md:after:right-[-16px] md:border-r md:border-gray-600 md:pr-8 md:after:hidden'
               variants={itemVariants}
             >
               <motion.h3 

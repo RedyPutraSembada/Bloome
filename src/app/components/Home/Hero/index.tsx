@@ -39,9 +39,9 @@ const NavigationButton = memo(({
   <button
     onClick={onClick}
     disabled={disabled}
-    className={`absolute ${position === 'left' ? '-left-7' : '-right-7'} top-1/2 -translate-y-1/2 z-30 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition-all duration-300 disabled:opacity-50 transform-gpu will-change-transform`}
+    className={`absolute ${position === 'left' ? '-left-3 md:-left-7' : '-right-3 md:-right-7'} top-1/2 -translate-y-1/2 z-30 bg-white/20 backdrop-blur-sm rounded-full p-2 md:p-3 hover:bg-white/30 transition-all duration-300 disabled:opacity-50 transform-gpu will-change-transform`}
   >
-    <Icon icon={icon} className="text-white text-xl" />
+    <Icon icon={icon} className="text-white text-sm md:text-xl" />
   </button>
 ));
 

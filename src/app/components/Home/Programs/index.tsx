@@ -15,6 +15,7 @@ const Programs = () => {
   const [programs, setPrograms] = useState<CourseType[]>([])
   const [loading, setLoading] = useState(true)
   const [imageSlides, setImageSlides] = useState<{ [key: number]: number }>({})
+  const [isDataReady, setIsDataReady] = useState(false) // Tambahkan state ini
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,8 +24,10 @@ const Programs = () => {
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
         setPrograms(data.ProgramData)
+        setIsDataReady(true) // Set true setelah data berhasil di-fetch
       } catch (error) {
         console.error('Error fetching service:', error)
+        setIsDataReady(true) // Set true meskipun error untuk menghindari loading infinite
       } finally {
         setLoading(false)
       }
@@ -140,15 +143,54 @@ const Programs = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.2 // Tambahkan delay untuk children
       }
     }
   };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 }
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5
+        // Tanpa ease akan menggunakan default easing
+      }
+    }
   };
+
+  // Render dengan animasi yang konsisten
+  if (!isDataReady) {
+    return (
+      <section id='program' className='scroll-mt-12 pb-20'>
+        <div className='container'>
+          <motion.div 
+            className='sm:flex justify-between items-center mb-10'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className='text-midnight_text mb-5 sm:mb-0 capitalize text-3xl md:text-5xl'>
+              Program & Pricing
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Slider {...settings}>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <CourseSkeleton key={i} />
+              ))}
+            </Slider>
+          </motion.div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section id='program' className='scroll-mt-12 pb-20'>
@@ -164,11 +206,12 @@ const Programs = () => {
             Program & Pricing
           </h2>
         </motion.div>
+        
         <motion.div
+          key={`programs-${isDataReady}`} // Key yang berubah untuk force re-render animasi
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          animate="visible" // Gunakan animate bukan whileInView untuk kontrol yang lebih baik
         >
           <Slider {...settings}>
             {loading
@@ -264,9 +307,6 @@ const Programs = () => {
                             {items.heading}
                           </h6>
                         </Link>
-                        {/* <p className='text-base font-normal pt-6 text-black/75'>
-                          {items.name}
-                        </p> */}
                         
                         {/* Deskripsi Program */}
                         {items.description && (
@@ -293,38 +333,6 @@ const Programs = () => {
                           </div>
                         )}
                         
-                        {/* <div className='flex flex-col lg:flex-row justify-between items-center py-6 border-b'>
-                          <div className='flex items-center gap-4'>
-                            <p className='text-red-700 text-xl font-medium'>
-                              {items.rating.toFixed(1)}
-                            </p>
-                            <div className='flex'>
-                              {renderStars(items.rating)}
-                            </div>
-                          </div>
-                          <p className='text-2xl font-medium'>{formatPrice(items.price)}</p>
-                        </div>
-                        <div className='flex justify-between pt-6'>
-                          <div className='flex gap-4'>
-                            <Icon
-                              icon='solar:notebook-minimalistic-outline'
-                              className='text-primary text-xl inline-block me-2'
-                            />
-                            <p className='text-base font-medium text-black/75'>
-                              {items.classes} sesi
-                            </p>
-                          </div>
-                          <div className='flex gap-4'>
-                            <Icon
-                              icon='solar:users-group-rounded-linear'
-                              className='text-primary text-xl inline-block me-2'
-                            />
-                            <p className='text-base font-medium text-black/75'>
-                              {items.students} siswa
-                            </p>
-                          </div>
-                        </div> */}
-                        
                         {/* Tombol Daftar */}
                         <div className='mt-6'>
                           <motion.button
@@ -348,4 +356,4 @@ const Programs = () => {
   )
 }
 
-export default Programs 
+export default Programs
