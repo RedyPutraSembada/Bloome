@@ -45,6 +45,34 @@ const Footer = () => {
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
+                
+                {/* Social Media Links */}
+                <div className="mt-4">
+                  <h4 className="text-green-950 text-lg font-semibold mb-3">Follow Us</h4>
+                  <div className="flex gap-4">
+                    <Link 
+                      href="https://www.instagram.com/bloomeeducation" 
+                      target="_blank" 
+                      className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                    >
+                      <Icon icon="mdi:instagram" className="text-xl text-pink-500" />
+                    </Link>
+                    <Link 
+                      href="https://www.tiktok.com/@bloome.education" 
+                      target="_blank" 
+                      className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                    >
+                      <Icon icon="mdi:music-note" className="text-xl text-black" />
+                    </Link>
+                    <Link 
+                      href="https://www.facebook.com/profile.php?id=61578488537190" 
+                      target="_blank" 
+                      className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                    >
+                      <Icon icon="mdi:facebook" className="text-xl text-blue-600" />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
