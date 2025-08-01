@@ -253,7 +253,7 @@ const Hero = () => {
           <div className='relative'>
             {/* Transparent Card - Full Height */}
             <div 
-              className='relative bg-primary/80 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl w-full lg:w-1/2 h-screen flex flex-col justify-center transform-gpu will-change-transform'
+              className='relative bg-primary/80 backdrop-blur-sm p-8 lg:p-10 border border-white/20 shadow-2xl w-full lg:w-1/2 h-screen flex flex-col justify-center transform-gpu will-change-transform'
               style={{
                 opacity: 1,
                 transform: 'translateX(0)',
