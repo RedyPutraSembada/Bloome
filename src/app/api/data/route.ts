@@ -24,8 +24,8 @@ const ProgramData: CourseType[] = [
     price: 5500000,
     rating: 4.9,
     terfavorit: true,
-    description: 'Program persiapan privat eksklusif yang dirancang untuk membantu siswa mewujudkan impian masuk ke fakultas kedokteran terbaik, baik jalur reguler maupun internasional.',
-    facilities: 'Free placement test, learning assessment report, modul belajar dan latihan soal, tryout, dibimbing tutor berpengalaman, pembekalan tes MMPI dan SJT, free formulir SNBT-UTBK dan beberapa mandiri PTN, free 1x test TOEFL/IELTS, mentorship universitas luar negeri, konsultasi pemilihan jurusan dengan psikolog profesional, campus tour ke UI',
+    description: 'Program privat eksklusif persiapan masuk Fakultas Kedokteran impian terbaik, baik jalur Reguler maupun Internasional.',
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan Tes MMPI dan SJT, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke kampus UI',
     images: [
       '/images/programs/Medicine Mastery Program_/Medicine Mastery Program .jpg',
       '/images/programs/Medicine Mastery Program_/Medicine Mastery Program 2.jpg'
@@ -40,8 +40,8 @@ const ProgramData: CourseType[] = [
     price: 4500000,
     rating: 4.9,
     terfavorit: true,
-    description: 'Program privat eksklusif untuk persiapan masuk PTN top di jurusan hukum, bisnis, ekonomi, dan teknik jalur reguler maupun internasional, dilengkapi dengan fasilitas lengkap.',
-    facilities: 'Free placement test, learning assessment report, modul belajar dan latihan soal, tryout, dibimbing tutor berpengalaman, pembekalan ujian SAT dan IELTS-TOEFL, free formulir SNBT-UTBK dan beberapa mandiri PTN, free 1x test TOEFL/IELTS, free 1x test SAT, mentorship universitas luar negeri, konsultasi pemilihan jurusan dengan psikolog profesional, campus tour ke kampus UI dan ITB',
+    description: 'Program privat eksklusif untuk persiapan masuk PTN Top di jurusan Hukum, Bisnis, Ekonomi, dan Teknik jalur Reguler maupun International.',
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Free Formulir SNBT-UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke kampus UI',
     images: [
       '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat.jpg',
       '/images/programs/LBEE Excellent Program_/LBEE Excellent Program - Privat (Materi & Fasilitas).jpg'
@@ -56,8 +56,8 @@ const ProgramData: CourseType[] = [
     price: 5000000,
     rating: 4.8,
     terfavorit: false,
-    description: 'Program privat eksklusif 2 tahun mulai dari kelas 10 SMA. Tahun pertama fokus kuasai materi sekolah, tahun kedua siap tempur seleksi PTN favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
-    facilities: 'Free placement test, learning assessment report, modul belajar dan latihan soal, tryout, dibimbing tutor berpengalaman, pembekalan tes MMPI dan SJT, free formulir SNBT-UTBK dan beberapa mandiri PTN, free 1x test TOEFL/IELTS, mentorship universitas luar negeri, konsultasi pemilihan jurusan dengan psikolog profesional, campus tour ke UI',
+    description: 'Program privat eksklusif untuk siswa sejak kelas 11, agar persiapan masuk PTN lebih matang dan terarah. Tahun pertama fokus ke materi sekolah, tahun kedua intensif hadapi SNBT, Ujian Mandiri, dan seleksi Universitas Luar Negeri.',
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar dan Latihan Soal, Tryout, Dibimbing Tutor Berpengalaman, Pembekalan ujian SAT dan IELTS–TOEFL, Free Formulir SNBT–UTBK dan beberapa Mandiri PTN, Free 1x Test Toefl/IELTS, Free 1x Test SAT, Mentorship Universitas Luar Negeri, Konsultasi Pemilihan Jurusan dengan Psikolog Professional, Campus tour ke kampus UI dan ITB',
     images: [
       '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat_.jpg',
       '/images/programs/Program 2 Tahun SMA/Program 2 Tahun SMA - Privat (Materi dan Fasilitas).jpg'
@@ -83,8 +83,8 @@ const ProgramData: CourseType[] = [
     price: 3500000,
     rating: 4.7,
     terfavorit: false,
-    description: 'Program privat eksklusif 2 tahun mulai dari kelas 8 SMP. Tahun pertama fokus kuasai materi sekolah, tahun kedua siap tempur seleksi SMA favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
-    facilities: 'Learning assessment report, dibimbing tutor berpengalaman, menggunakan metode master, bimbingan konseling, konsultasi akademik, persiapan PTS PAS PAT, persiapan ANBK (Asesmen Nasional Berbasis Komputer), persiapan ujian TKA (Tes Kemampuan Akademik)',
+    description: 'Program privat eksklusif 2 tahun mulai dari kelas 8 SMP. Fokus kuasai materi sekolah dan persiapan masuk SMA favorit dengan strategi jitu, latihan soal, dan bimbingan intensif.',
+    facilities: 'Learning Assessment Report, Dibimbing Tutor Berpengalaman, Menggunakan Metode Master, Bimbingan Konseling, Konsultasi Akademik, Persiapan PTS, PAS, PAT, Persiapan ANBK (Assemen Nasional Berbasis Komputer), Persiapan Ujian TKA (Tes Kemampuan Akademik)',
     images: [
       '/images/programs/Program 2 Tahun SMP/Program 2 Tahun SMP.jpg',
       '/images/programs/Program 2 Tahun SMP/Fasilitas Program 2 Tahun SMP.jpg'
@@ -99,13 +99,17 @@ const ProgramData: CourseType[] = [
     price: 45000000,
     rating: 4.9,
     terfavorit: false,
-    description: 'Program group class eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
-    facilities: 'Learning assessment report, modul belajar, latihan soal & tryout, dibimbing tutor berpengalaman, free mock test interview dan FGD, tips & strategi dari alumni IUP berbagai universitas, konsultasi pemilihan jurusan dengan psikolog profesional',
+    description: 'Program Group class eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
+    facilities: 'Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional',
     images: [
       '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline.jpg',
       '/images/programs/Program IUP_/Program Khusus IUP - Group Online dan Offline (Materi dan Fasilitas).jpg'
     ]
   },
+
+
+
+
   // {
   //   heading: 'Program Khusus IUP (Group)',
   //   name: 'Bloome Education',
@@ -127,7 +131,7 @@ const ProgramData: CourseType[] = [
     rating: 5.0,
     terfavorit: false,
     description: 'Program privat eksklusif untuk siswa yang menargetkan kelas internasional (IUP) di UI, UGM, ITB, UNDIP, dan kampus bergengsi lainnya.',
-    facilities: 'Free placement test, learning assessment report, modul belajar, latihan soal & tryout, bimbingan penulisan motivation letter, dibimbing tutor berpengalaman, free mock test interview dan FGD, free 1x formulir pendaftaran IUP, persiapan test TOEFL/IELTS, IUP camp akomodasi 1 bulan, tips & strategi dari alumni IUP berbagai universitas, konsultasi pemilihan jurusan dengan psikolog profesional',
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Belajar, Latihan Soal & Tryout, Bimbingan Penulisan Motivation Letter, Dibimbing Tutor Berpengalaman, Free Mock Test Interview dan FGD, Free 1x Formulir Pendaftaran IUP, Persiapan Test Toefl/IELTS, IUP Camp akomodasi 1 bulan, Tips & strategi dari alumni IUP berbagai universitas, Konsultasi Pemilihan Jurusan dengan Psikolog Professional',
     images: [
       '/images/programs/Program IUP_/Program Khusus IUP - Privat_.jpg',
       '/images/programs/Program IUP_/Program Khusus IUP - Privat (Materi dan Fasilitas).jpg'
@@ -142,8 +146,8 @@ const ProgramData: CourseType[] = [
     price: 9900000,
     rating: 4.8,
     terfavorit: false,
-    description: 'Program intensif untuk siswa kelas 12 yang ingin menembus jalur SNBT (Seleksi Nasional Berdasarkan Tes). Dibekali dengan strategi belajar terarah, latihan soal berkualitas, serta simulasi berkala.',
-    facilities: 'Free placement test, learning assessment report, modul pembelajaran lengkap detail sistematis dan terupdate, dibimbing guru ahli SNBT profesional, tryout SNBT, free formulir SNBT'
+    description: 'Program intensif untuk siswa kelas 12 yang ingin menembus jalur SNBT (Seleksi Nasional Berdasarkan Tes). Dibekali dengan strategi belajar terarah, latihan soal berkualitas, serta simulasi berkala, program ini dirancang untuk membantu siswa lolos ke PTN impian melalui jalur tes nasional.',
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Pembelajaran Lengkap, Detail, Sistematis dan Terupdata, Dibimbing Guru Ahli SNBT Profesional, Tryout SNBT, Free Formulir SNBT'
   },
   {
     heading: 'Program Exclusive TKA SMA',
@@ -154,8 +158,8 @@ const ProgramData: CourseType[] = [
     price: 18000000,
     rating: 4.9,
     terfavorit: false,
-    description: 'Program ini bantu kamu mengerti materi, bukan cuma hafal. Fokus ke pemahaman, strategi belajar efektif, analisis soal, dan penguatan konsep penting untuk mendapat nilai optimal di TKA.',
-    facilities: 'Free placement test, learning assessment report, modul belajar, latihan soal-soal TKA, tryout, dibimbing guru ahli TKA profesional, personal coaching, strategi belajar dan ujian efektif'
+    description: 'Program ini bantu kamu mengerti materi, bukan cuma hafal. Fokus ke pemahaman, strategi belajar efektif, analisis soal, dan penguatan konsep penting untuk mendapat nilai optimal di TKA (Tes Kemampuan Akademik).',
+    facilities: 'Free placement test, Learning assessment report, modul belajar, latihan soal-soal TKA, tryout, dibimbing guru ahli TKA professional, personal coaching, strategi belajar dan ujian efektif'
   },
   {
     heading: 'Program Sukses TKA',
