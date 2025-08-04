@@ -7,12 +7,14 @@ import { chunkArray } from '@/utils/validateEmail'
 import { NextResponse } from 'next/server'
 
 const HeaderData: HeaderType[] = [
-  { label: 'Beranda', href: '/' },
-  { label: 'Program', href: '/#program' },
-  { label: 'Testimoni', href: '/#testimoni' },
-  { label: 'Daftar', href: '/#daftar' },
+  { label: 'Home', href: '/' },
+  { label: 'Why Bloome?', href: '/#why-bloome' },
+  { label: 'Programs', href: '/#program' },
+  { label: 'Testimonials', href: '/#testimoni' },
+  { label: 'Exclusive Facilities', href: '/#exclusive-facilities' },
+  { label: 'Register', href: '/#daftar' },
   { label: 'Contact Us', href: '/#kontak' },
-]
+];
 
 const ProgramData: CourseType[] = [
   {

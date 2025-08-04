@@ -220,7 +220,7 @@ const Programs = () => {
                 ))
               : programs.map((items, i) => (
                   <motion.div key={i} variants={cardVariants}>
-                    <div className='bg-white m-3 px-3 pt-3 pb-12 shadow-md rounded-2xl h-full border border-black/10 capitalize'>
+                    <div className='bg-white m-3 px-3 pt-3 pb-12 shadow-md rounded-2xl h-full border border-black/10'>
                       <div className='relative rounded-3xl'>
                         <div className='rounded-2xl overflow-hidden'>
                           {/* Image Slider for programs with multiple images */}
@@ -312,7 +312,7 @@ const Programs = () => {
                         {items.description && (
                           <div className='mt-4'>
                             <h4 className='text-sm font-semibold text-primary mb-2'>Deskripsi Program:</h4>
-                            <p className='text-sm text-black/70 leading-relaxed'>
+                            <p className='text-sm text-black/70'>
                               {items.description}
                             </p>
                           </div>
@@ -322,7 +322,7 @@ const Programs = () => {
                         {items.facilities && (
                           <div className='mt-4'>
                             <h4 className='text-sm font-semibold text-primary mb-2'>Fasilitas Program:</h4>
-                            <ul className='text-sm text-black/70 leading-relaxed space-y-1'>
+                            <ul className='text-sm text-black/70 space-y-1'>
                               {items.facilities.split(', ').map((facility, index) => (
                                 <li key={index} className='flex items-start gap-2'>
                                   <span className='text-primary text-xs mt-1'>•</span>

@@ -20,7 +20,7 @@ const WhyBloome = () => {
   };
 
   return (
-    <section className='bg-slate-gray w-full overflow-hidden'>
+    <section id='why-bloome' className='bg-slate-gray w-full overflow-hidden'>
       <div className='container'>
         {/* Kenapa Harus Pilih Bloome Section */}
         <motion.div 
