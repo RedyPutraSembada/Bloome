@@ -111,7 +111,7 @@ const ContactForm = () => {
   ];
 
   return (
-    <section id='exclusive-facilities' className='scroll-mt-12 bg-gradient-to-br from-slate-50 to-green-50'>
+    <section id='exclusive-facilities' className='bg-gradient-to-br from-slate-50 to-green-50 !py-16 md:!py-20 lg:!py-24 scroll-mt-24'>
       <div className='container'>
         <motion.div 
           className='relative'

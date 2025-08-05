@@ -82,7 +82,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 z-40 w-full transition-all duration-300 ${
         sticky ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm shadow-sm py-4 lg:py-4'
       }`}>
-      <div className='w-full overflow-hidden'>
+      <div className='w-full'>
         <div className='container flex items-center justify-between'>
           <Logo />
           <nav className='hidden lg:flex grow items-center lg:gap-5 xl:gap-8 justify-center'>

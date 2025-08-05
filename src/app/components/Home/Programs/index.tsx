@@ -193,7 +193,7 @@ const Programs = () => {
   }
 
   return (
-    <section id='program' className='scroll-mt-12 pb-20'>
+    <section id='program' className='pb-20 !py-16 md:!py-20 lg:!py-24 scroll-mt-24'>
       <div className='container'>
         <motion.div 
           className='sm:flex justify-between items-center mb-10'

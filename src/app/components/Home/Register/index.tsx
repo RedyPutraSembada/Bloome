@@ -26,7 +26,7 @@ const Register = () => {
   };
 
   return (
-    <section id='daftar'>
+    <section id='daftar' className='!py-16 md:!py-20 lg:!py-24 scroll-mt-24'>
       <div className='container'>
         <motion.div 
           className='grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12 xl:gap-x-8'

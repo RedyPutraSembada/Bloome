@@ -9,7 +9,19 @@ import { NextResponse } from 'next/server'
 const HeaderData: HeaderType[] = [
   { label: 'Home', href: '/' },
   { label: 'Why Bloome?', href: '/#why-bloome' },
-  { label: 'Programs', href: '/#program' },
+  { label: 'Programs', href: '/#program',
+    submenu: [
+      { label: 'Medicine Mastery Program', href: '/#program' },
+      { label: 'LBEE Excellent Program', href: '/#program' },
+      { label: 'Program 2 Tahun SMA', href: '/#program' },
+      { label: 'Program 2 Tahun SMP', href: '/#program' },
+      { label: 'Program Khusus IUP (Group)', href: '/#program' },
+      { label: 'Program Khusus IUP (Privat)', href: '/#program' },
+      { label: 'Program Sukses SNBT', href: '/#program' },
+      { label: 'Program Exclusive TKA SMA', href: '/#program' },
+      { label: 'Program Sukses TKA', href: '/#program' },
+    ]
+  },
   { label: 'Testimonials', href: '/#testimoni' },
   { label: 'Exclusive Facilities', href: '/#exclusive-facilities' },
   { label: 'Register', href: '/#daftar' },
@@ -173,7 +185,7 @@ const ProgramData: CourseType[] = [
     rating: 4.7,
     terfavorit: false,
     description: 'Program untuk siswa kelas 6, 9, dan 12 agar bisa menghadapi TKA dengan strategi belajar yang efektif, latihan rutin, dan bimbingan yang suportif.',
-    facilities: 'Free placement test, learning assessment report, modul belajar dan latihan soal, tryout, dibimbing tutor berpengalaman, pembekalan tes MMPI dan SJT, free formulir SNBT-UTBK dan beberapa mandiri PTN, free 1x test TOEFL/IELTS, mentorship universitas luar negeri, konsultasi pemilihan jurusan dengan psikolog profesional'
+    facilities: 'Free Placement Test, Learning Assessment Report, Modul Pembelajaran Lengkap, Detail, Sistematis dan Terupdata, Dibimbing Guru Ahli Profesional, Tryout, Free Formulir'
   },
   // {
   //   heading: 'LBEE Excellent Program',

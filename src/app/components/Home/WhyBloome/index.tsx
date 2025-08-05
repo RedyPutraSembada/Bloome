@@ -20,18 +20,18 @@ const WhyBloome = () => {
   };
 
   return (
-    <section id='why-bloome' className='bg-slate-gray w-full overflow-hidden'>
+    <section id='why-bloome' className='bg-slate-gray w-full !py-16 md:!py-20 lg:!py-24 scroll-mt-24'>
       <div className='container'>
         {/* Kenapa Harus Pilih Bloome Section */}
         <motion.div 
-          className=''
+          className='mb-16'
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <motion.h2 
-            className='text-midnight_text text-center font-semibold mb-8'
+            className='text-midnight_text text-center font-semibold mb-8 text-3xl md:text-4xl lg:text-5xl'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -40,7 +40,7 @@ const WhyBloome = () => {
             WHY BLOOME?
           </motion.h2>
           <motion.p 
-            className='text-black/70 text-center mb-8 max-w-4xl mx-auto'
+            className='text-black/70 text-center mb-8 max-w-4xl mx-auto text-base md:text-lg leading-relaxed'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -49,7 +49,7 @@ const WhyBloome = () => {
             At Bloome Education, we don't just prepare students for exams — we prepare them for life. Through personalized mentoring and our proven 3-Pillar Approach, we help students unlock their true potential, build strong, consistent study habits, and achieve admission into their dream universities.
           </motion.p>
           <motion.p 
-            className='text-black/70 text-center mb-12 max-w-4xl mx-auto'
+            className='text-black/70 text-center mb-12 max-w-4xl mx-auto text-base md:text-lg leading-relaxed'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -117,7 +117,7 @@ const WhyBloome = () => {
         
         {/* Statistics Section */}
         <motion.div 
-          className='mt-16'
+          className='pt-8'
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
